@@ -1,50 +1,52 @@
-import React from 'react'
-import { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ShopContext } from '../context/ShopContext'
 import { useSearchParams } from 'react-router-dom'
-import { useEffect } from 'react'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import axios from 'axios'
+import PageLoader from '../components/PageLoader'
 
 const Verify = () => {
 
+    const { t } = useTranslation('account')
     const { navigate, token, setCartItems, backendUrl } = useContext(ShopContext)
-    const [searchParams, setSearchParams] = useSearchParams()
-    
+    const [searchParams] = useSearchParams()
+
     const success = searchParams.get('success')
     const orderId = searchParams.get('orderId')
 
     const verifyPayment = async () => {
         try {
 
-            if (!token) {
-                return null
-            }
-
             const response = await axios.post(backendUrl + '/api/order/verifyStripe', { success, orderId }, { headers: { token } })
 
             if (response.data.success) {
                 setCartItems({})
                 navigate('/orders')
+                toast.success(t('verify.paymentCompleted'))
             } else {
                 navigate('/cart')
+                toast.error(response.data.message || t('verify.paymentVerificationFailed'))
             }
 
         } catch (error) {
             console.log(error)
-            toast.error(error.message)
+            navigate('/cart')
+            toast.error(t('verify.paymentVerificationFailed'))
         }
     }
 
     useEffect(() => {
-        verifyPayment()
-    }, [token])
+        if (token && orderId) {
+            verifyPayment()
+        } else if (!token) {
+            navigate('/login')
+        } else {
+            navigate('/cart')
+        }
+    }, [token, orderId, success])
 
-    return (
-        <div>
-
-        </div>
-    )
+    return <PageLoader title={t('verify.verifying')} label={t('verify.pleaseWait')} />
 }
 
 export default Verify

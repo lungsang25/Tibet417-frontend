@@ -5,7 +5,6 @@
     "namePlaceholder": "Nom",
     "emailPlaceholder": "E-mail",
     "passwordPlaceholder": "Mot de passe",
-    "forgotPassword": "Mot de passe oublié ?",
     "createAccount": "Créer un compte",
     "loginHere": "Se connecter ici",
     "signInButton": "Se connecter",
@@ -14,12 +13,23 @@
     "googleSignInFailed": "Échec de la connexion Google"
   },
   "orders": {
-    "heading": { "text1": "MES", "text2": "COMMANDES" },
+    "heading": {
+      "text1": "MES",
+      "text2": "COMMANDES"
+    },
     "quantity": "Quantité :",
     "size": "Taille :",
     "date": "Date :",
     "payment": "Paiement :",
-    "trackOrder": "Suivre la commande"
+    "trackOrder": "Suivre la commande",
+    "loading": "Chargement de vos commandes…",
+    "loadFailed": "Impossible de charger vos commandes — veuillez réessayer.",
+    "empty": {
+      "text": "Vous n'avez pas encore passé de commande.",
+      "cta": "Commencer mes achats"
+    },
+    "orderNumber": "Commande n° {{id}}",
+    "total": "Total :"
   },
   "profile": {
     "loading": "Chargement...",
@@ -33,6 +43,7 @@
     "twintVerifying": "Vérification de votre paiement Twint...",
     "pleaseWait": "Veuillez patienter pendant que nous confirmons votre paiement.",
     "paymentCompleted": "Paiement effectué avec succès !",
-    "paymentVerificationFailed": "Échec de la vérification du paiement"
+    "paymentVerificationFailed": "Échec de la vérification du paiement",
+    "verifying": "Vérification de votre paiement…"
   }
 }

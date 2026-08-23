@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocalizedLink as Link } from '../hooks/useLocalizedNavigation'
-import hero_img from '../assets/hero/hero_img.png'
-import hero_img1 from '../assets/hero/p_img38(1).jpg'
-import hero_img2 from '../assets/hero/p_img4.png'
+// vite-imagetools generates AVIF/WebP + multiple widths at build time from
+// these three source files (the heaviest assets in the repo: up to 2MB each
+// as plain PNG/JPG) and returns { sources: { avif, webp, ... }, img: { src,
+// w, h } } for a <picture> element — no runtime cost, everything happens
+// during `vite build`.
+import hero_img from '../assets/hero/hero_img.png?w=800;1280;1920&format=avif;webp;png&quality=75&as=picture'
+import hero_img1 from '../assets/hero/p_img38(1).jpg?w=800;1280;1920&format=avif;webp;jpeg&quality=75&as=picture'
+import hero_img2 from '../assets/hero/p_img4.png?w=800;1280;1920&format=avif;webp;png&quality=75&as=picture'
 
 // Images and hrefs are the only things fixed here — copy comes from
 // home.json's hero.slides array (same order: new arrivals, winter, best
@@ -190,18 +195,26 @@ const Hero = () => {
             className='relative w-full min-w-full h-full overflow-hidden'
             aria-hidden={index !== pos}
           >
-            <img
-              src={slide.image}
-              alt={index === pos ? slide.alt : ''}
-              loading={index <= 1 ? 'eager' : 'lazy'}
-              fetchpriority={index === 1 ? 'high' : 'auto'}
-              style={{ objectPosition: slide.position }}
-              // Inactive slides hold the animation's end state so a slide
-              // leaving view doesn't visibly snap back to scale 1.
-              className={`w-full h-full object-cover ${
-                index === pos ? 'animate-ken-burns' : 'scale-[1.06]'
-              }`}
-            />
+            <picture>
+              {slide.image.sources.avif && (
+                <source type='image/avif' srcSet={slide.image.sources.avif} sizes='100vw' />
+              )}
+              {slide.image.sources.webp && (
+                <source type='image/webp' srcSet={slide.image.sources.webp} sizes='100vw' />
+              )}
+              <img
+                src={slide.image.img.src}
+                alt={index === pos ? slide.alt : ''}
+                loading={index <= 1 ? 'eager' : 'lazy'}
+                fetchpriority={index === 1 ? 'high' : 'auto'}
+                style={{ objectPosition: slide.position }}
+                // Inactive slides hold the animation's end state so a slide
+                // leaving view doesn't visibly snap back to scale 1.
+                className={`w-full h-full object-cover ${
+                  index === pos ? 'animate-ken-burns' : 'scale-[1.06]'
+                }`}
+              />
+            </picture>
           </div>
         ))}
       </div>
@@ -230,7 +243,7 @@ const Hero = () => {
             <Link
               to={activeSlide.href}
               onClick={() => scrollTo(0, 0)}
-              className='inline-block mt-8 bg-white text-ink px-8 py-3.5 text-[11px] uppercase tracking-label hover:bg-ink hover:text-white transition-colors duration-300'
+              className='inline-block mt-8 bg-paper text-ink px-8 py-3.5 text-[11px] uppercase tracking-label hover:bg-ink hover:text-paper transition-colors duration-300'
             >
               {activeSlide.cta}
             </Link>

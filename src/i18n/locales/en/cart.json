@@ -1,10 +1,23 @@
 {
-  "heading": { "text1": "YOUR", "text2": "CART" },
+  "heading": {
+    "text1": "YOUR",
+    "text2": "CART"
+  },
   "checkoutButton": "PROCEED TO CHECKOUT",
   "total": {
-    "heading": { "text1": "CART", "text2": "TOTALS" },
+    "heading": {
+      "text1": "CART",
+      "text2": "TOTALS"
+    },
     "subtotal": "Subtotal",
     "shippingFee": "Shipping Fee",
     "total": "Total"
-  }
+  },
+  "empty": {
+    "text": "Your cart is empty.",
+    "cta": "Continue shopping"
+  },
+  "lineSubtotal": "Subtotal: {{currency}} {{amount}}",
+  "quantityFor": "Quantity for {{name}}",
+  "removeItem": "Remove {{name}} from cart"
 }

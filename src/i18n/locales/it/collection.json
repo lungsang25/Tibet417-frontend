@@ -32,7 +32,8 @@
     "kids": "Bambini",
     "topwear": "Capi superiori",
     "bottomwear": "Capi inferiori",
-    "winterwear": "Abbigliamento invernale"
+    "winterwear": "Abbigliamento invernale",
+    "clearAll": "Cancella tutto"
   },
   "sort": {
     "relevant": "Ordina per: Rilevanza",
@@ -47,5 +48,8 @@
   "empty": {
     "text": "Non c'è ancora nulla qui.",
     "linkText": "Sfoglia l'intera collezione"
+  },
+  "results": {
+    "count": "{{count}} risultati"
   }
 }

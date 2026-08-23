@@ -1,10 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Title'
-import { assets } from '../assets/assets'
-import NewsletterBox from '../components/NewsletterBox'
 import SEO from '../components/SEO'
 import { business } from '../config/site'
+// Displayed at max-w-[480px]; 480/960 covers 1x/2x at that display size
+// without shipping the full-resolution source (was a 1.1MB PNG).
+import contact_img from '../assets/contact_img.png?w=480;960&format=avif;webp;png&quality=75&as=picture'
 
 const Contact = () => {
   const { t } = useTranslation('contact')
@@ -25,7 +26,11 @@ const Contact = () => {
       </div>
 
       <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28'>
-        <img className='w-full md:max-w-[480px]' src={assets.contact_img} alt={t('imgAlt')} />
+        <picture>
+          {contact_img.sources.avif && <source type='image/avif' srcSet={contact_img.sources.avif} sizes='(min-width: 768px) 480px, 100vw' />}
+          {contact_img.sources.webp && <source type='image/webp' srcSet={contact_img.sources.webp} sizes='(min-width: 768px) 480px, 100vw' />}
+          <img className='w-full md:max-w-[480px]' src={contact_img.img.src} alt={t('imgAlt')} loading='lazy' />
+        </picture>
         <div className='flex flex-col justify-center items-start gap-6'>
           <h2 className='font-semibold text-xl text-gray-600'>{t('ourStore')}</h2>
 
@@ -62,8 +67,6 @@ const Contact = () => {
           </p>
         </div>
       </div>
-
-      <NewsletterBox/>
     </div>
   )
 }

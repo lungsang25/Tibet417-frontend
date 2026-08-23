@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import PageLoader from '../components/PageLoader'
 
 const VerifyTwint = () => {
     const { t } = useTranslation('account')
@@ -50,15 +51,7 @@ const VerifyTwint = () => {
         }
     }, [token, orderId, success])
 
-    return (
-        <div className='min-h-[60vh] flex items-center justify-center'>
-            <div className='text-center'>
-                <div className='w-16 h-16 border-4 border-gray-300 border-t-gray-900 rounded-full animate-spin mx-auto mb-4'></div>
-                <p className='text-lg'>{t('verify.twintVerifying')}</p>
-                <p className='text-sm text-gray-600 mt-2'>{t('verify.pleaseWait')}</p>
-            </div>
-        </div>
-    )
+    return <PageLoader title={t('verify.twintVerifying')} label={t('verify.pleaseWait')} />
 }
 
 export default VerifyTwint

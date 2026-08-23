@@ -1,10 +1,23 @@
 {
-  "heading": { "text1": "VOTRE", "text2": "PANIER" },
+  "heading": {
+    "text1": "VOTRE",
+    "text2": "PANIER"
+  },
   "checkoutButton": "PASSER À LA CAISSE",
   "total": {
-    "heading": { "text1": "TOTAL DU", "text2": "PANIER" },
+    "heading": {
+      "text1": "TOTAL DU",
+      "text2": "PANIER"
+    },
     "subtotal": "Sous-total",
     "shippingFee": "Frais de livraison",
     "total": "Total"
-  }
+  },
+  "empty": {
+    "text": "Votre panier est vide.",
+    "cta": "Continuer mes achats"
+  },
+  "lineSubtotal": "Sous-total : {{currency}} {{amount}}",
+  "quantityFor": "Quantité pour {{name}}",
+  "removeItem": "Retirer {{name}} du panier"
 }

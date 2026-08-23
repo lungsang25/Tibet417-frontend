@@ -7,5 +7,19 @@
   "withdrawalNoteSuffix": ".",
   "termsLink": "Conditions générales",
   "descriptionTab": "Description",
-  "related": { "text1": "PRODUITS", "text2": "SIMILAIRES" }
+  "related": {
+    "text1": "PRODUITS",
+    "text2": "SIMILAIRES"
+  },
+  "loading": "Chargement du produit…",
+  "notFound": {
+    "title": "Produit introuvable",
+    "text": "Ce produit est introuvable — il a peut-être été retiré.",
+    "linkText": "Retour à la collection"
+  },
+  "quantityLabel": "Quantité",
+  "lightbox": {
+    "previous": "Image précédente",
+    "next": "Image suivante"
+  }
 }

@@ -41,6 +41,13 @@ const ShopContextProvider = (props) => {
     const navigate = useLocalizedNavigate();
 
 
+    // Server-side /api/cart/add (cartController.js) always increments by
+    // exactly 1 and ignores any other field in the body — it isn't a
+    // quantity-aware endpoint. addToCart mirrors that here so local state
+    // never drifts from what the server actually persists for a logged-in
+    // user. Adding more than one at once (e.g. from the PDP quantity
+    // selector) goes through updateQuantity instead, which the server does
+    // treat as an absolute value.
     const addToCart = async (itemId, size) => {
 
         if (!size) {
@@ -97,6 +104,15 @@ const ShopContextProvider = (props) => {
 
         let cartData = structuredClone(cartItems);
 
+        // cartItems is a snapshot from this render's context value. A caller
+        // that just awaited addToCart for the same itemId (Product.jsx's
+        // quantity selector does this) can reach here before that state
+        // update has flowed back through context, so cartData[itemId] may
+        // still look empty even though the item was just added — guard
+        // rather than crash on cartData[itemId][size] = ...
+        if (!cartData[itemId]) {
+            cartData[itemId] = {};
+        }
         cartData[itemId][size] = quantity;
 
         setCartItems(cartData)

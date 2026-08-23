@@ -1,9 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Title'
-import { assets } from '../assets/assets'
-import NewsletterBox from '../components/NewsletterBox'
 import SEO from '../components/SEO'
+// Displayed at max-w-[450px]; 480/960 covers 1x/2x at that display size
+// without shipping the full-resolution source (was a 1.2MB PNG).
+import about_img from '../assets/about_img.png?w=480;960&format=avif;webp;png&quality=75&as=picture'
 
 /**
  * This page is one of Google's main sources for understanding what "Tibet417"
@@ -36,7 +37,11 @@ const About = () => {
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-16'>
-          <img className='w-full md:max-w-[450px]' src={assets.about_img} alt={t('imgAlt')} />
+          <picture>
+            {about_img.sources.avif && <source type='image/avif' srcSet={about_img.sources.avif} sizes='(min-width: 768px) 450px, 100vw' />}
+            {about_img.sources.webp && <source type='image/webp' srcSet={about_img.sources.webp} sizes='(min-width: 768px) 450px, 100vw' />}
+            <img className='w-full md:max-w-[450px]' src={about_img.img.src} alt={t('imgAlt')} loading='lazy' />
+          </picture>
           <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
               <p>{t('intro1')}</p>
               <p>{t('intro2')}</p>
@@ -63,8 +68,6 @@ const About = () => {
             <p className=' text-gray-600'>{t('cards.withdrawal.text')}</p>
           </div>
       </div>
-
-      <NewsletterBox/>
 
     </div>
   )

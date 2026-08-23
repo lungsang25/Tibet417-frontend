@@ -19,6 +19,15 @@ export default {
       letterSpacing: {
         label: '0.2em',
       },
+      transitionDuration: {
+        fast: '150ms',
+        base: '300ms',
+        slow: '500ms',
+        slower: '700ms',
+      },
+      boxShadow: {
+        modal: '0 20px 60px -15px rgba(26, 26, 26, 0.35)',
+      },
       keyframes: {
         'fade-up': {
           '0%': { opacity: '0', transform: 'translateY(12px)' },

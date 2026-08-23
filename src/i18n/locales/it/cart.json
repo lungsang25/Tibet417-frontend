@@ -1,10 +1,23 @@
 {
-  "heading": { "text1": "IL TUO", "text2": "CARRELLO" },
+  "heading": {
+    "text1": "IL TUO",
+    "text2": "CARRELLO"
+  },
   "checkoutButton": "PROCEDI AL PAGAMENTO",
   "total": {
-    "heading": { "text1": "TOTALE", "text2": "CARRELLO" },
+    "heading": {
+      "text1": "TOTALE",
+      "text2": "CARRELLO"
+    },
     "subtotal": "Subtotale",
     "shippingFee": "Spese di spedizione",
     "total": "Totale"
-  }
+  },
+  "empty": {
+    "text": "Il tuo carrello è vuoto.",
+    "cta": "Continua lo shopping"
+  },
+  "lineSubtotal": "Subtotale: {{currency}} {{amount}}",
+  "quantityFor": "Quantità per {{name}}",
+  "removeItem": "Rimuovi {{name}} dal carrello"
 }

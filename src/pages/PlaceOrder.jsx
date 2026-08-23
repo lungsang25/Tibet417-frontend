@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { LocalizedLink as Link } from '../hooks/useLocalizedNavigation'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
+import Modal from '../components/Modal'
 import { assets } from '../assets/assets'
 import { ShopContext } from '../context/ShopContext'
 import axios from 'axios'
@@ -13,6 +14,7 @@ const PlaceOrder = () => {
     const { t } = useTranslation('checkout')
     const [method, setMethod] = useState('cod');
     const [acceptedTerms, setAcceptedTerms] = useState(false);
+    const [qrModal, setQrModal] = useState(null);
     const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
     const [formData, setFormData] = useState({
         firstName: '',
@@ -39,35 +41,10 @@ const PlaceOrder = () => {
             window.location.href = paymentData.paymentUrl;
         } else if (paymentData.qrCodeUrl) {
             // Show QR code modal for mobile payments
-            showTwintQRModal(paymentData);
+            setQrModal(paymentData);
         } else {
             toast.error(t('toasts.paymentUrlUnavailable'));
         }
-    }
-
-    const showTwintQRModal = (paymentData) => {
-        // Create a modal to display QR code
-        const modal = document.createElement('div');
-        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
-        modal.innerHTML = `
-            <div class="bg-white p-6 rounded-lg max-w-md mx-4">
-                <h3 class="text-lg font-bold mb-4 text-center">${t('twintModal.title')}</h3>
-                <div class="text-center mb-4">
-                    <img src="${paymentData.qrCodeUrl}" alt="Twint QR Code" class="w-48 h-48 mx-auto mb-4 border" />
-                    <p class="text-sm text-gray-600 mb-2">${t('twintModal.scanText')}</p>
-                    <p class="text-lg font-semibold">CHF ${(paymentData.amount).toFixed(2)}</p>
-                </div>
-                <div class="flex gap-2">
-                    <button onclick="window.location.href='${paymentData.paymentUrl}'" class="flex-1 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-                        ${t('twintModal.openPaymentPage')}
-                    </button>
-                    <button onclick="this.closest('.fixed').remove()" class="flex-1 bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600">
-                        ${t('twintModal.cancel')}
-                    </button>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(modal);
     }
 
     const verifyTwintPayment = async (orderId, paymentStatus) => {
@@ -93,7 +70,7 @@ const PlaceOrder = () => {
     const onSubmitHandler = async (event) => {
         event.preventDefault()
         try {
-            
+
             let orderItems = []
 
             for(const items in cartItems){
@@ -116,7 +93,7 @@ const PlaceOrder = () => {
             }
 
             switch (method) {
-                
+
                 // API Calls for COD
                 case 'cod':
                     const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers:{token}})
@@ -127,7 +104,7 @@ const PlaceOrder = () => {
                         toast.error(response.data.message)
                     }
                     break;
-                
+
                 case 'stripe':
                     const responseStripe = await axios.post(backendUrl + '/api/order/stripe',orderData,{headers:{token}})
                     if (responseStripe.data.success) {
@@ -168,20 +145,25 @@ const PlaceOrder = () => {
                     <Title text1={t('deliveryInfo.text1')} text2={t('deliveryInfo.text2')} as='h1' />
                 </div>
                 <div className='flex gap-3'>
-                    <input required onChange={onChangeHandler} name='firstName' value={formData.firstName} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.firstName')} />
-                    <input required onChange={onChangeHandler} name='lastName' value={formData.lastName} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.lastName')} />
+                    <input required onChange={onChangeHandler} name='firstName' value={formData.firstName} autoComplete='given-name' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.firstName')} />
+                    <input required onChange={onChangeHandler} name='lastName' value={formData.lastName} autoComplete='family-name' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.lastName')} />
                 </div>
-                <input required onChange={onChangeHandler} name='email' value={formData.email} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="email" placeholder={t('placeholders.email')} />
-                <input required onChange={onChangeHandler} name='street' value={formData.street} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.street')} />
+                <input required onChange={onChangeHandler} name='email' value={formData.email} autoComplete='email' className='border border-line rounded py-1.5 px-3.5 w-full' type="email" placeholder={t('placeholders.email')} />
+                <input required onChange={onChangeHandler} name='street' value={formData.street} autoComplete='street-address' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.street')} />
                 <div className='flex gap-3'>
-                    <input required onChange={onChangeHandler} name='city' value={formData.city} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.city')} />
-                    <input onChange={onChangeHandler} name='state' value={formData.state} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.state')} />
+                    <input required onChange={onChangeHandler} name='city' value={formData.city} autoComplete='address-level2' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.city')} />
+                    <input onChange={onChangeHandler} name='state' value={formData.state} autoComplete='address-level1' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.state')} />
                 </div>
                 <div className='flex gap-3'>
-                    <input required onChange={onChangeHandler} name='zipcode' value={formData.zipcode} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder={t('placeholders.zipcode')} />
-                    <input required onChange={onChangeHandler} name='country' value={formData.country} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.country')} />
+                    {/* type=number previously hid a leading zero and added spinner
+                        arrows to what is really a short text code, not a quantity. */}
+                    <input required onChange={onChangeHandler} name='zipcode' value={formData.zipcode} autoComplete='postal-code' inputMode='numeric' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.zipcode')} />
+                    <input required onChange={onChangeHandler} name='country' value={formData.country} autoComplete='country-name' className='border border-line rounded py-1.5 px-3.5 w-full' type="text" placeholder={t('placeholders.country')} />
                 </div>
-                <input required onChange={onChangeHandler} name='phone' value={formData.phone} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder={t('placeholders.phone')} />
+                {/* type=tel (not number) so a leading + and spaces are valid input,
+                    and mobile keyboards offer the right symbols instead of a plain
+                    numeric pad with no way to type +41. */}
+                <input required onChange={onChangeHandler} name='phone' value={formData.phone} autoComplete='tel' className='border border-line rounded py-1.5 px-3.5 w-full' type="tel" placeholder={t('placeholders.phone')} />
             </div>
 
             {/* ------------- Right Side ------------------ */}
@@ -194,33 +176,54 @@ const PlaceOrder = () => {
                 <div className='mt-12'>
                     <Title text1={t('paymentMethod.text1')} text2={t('paymentMethod.text2')} />
                     {/* --------------- Payment Method Selection ------------- */}
-                    <div className='flex gap-3 flex-col lg:flex-row'>
-                        <div onClick={() => setMethod('stripe')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-                            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-400' : ''}`}></p>
-                            <img className='h-5 mx-4' src={assets.stripe_logo} alt="" />
-                        </div>
-                        <div onClick={() => setMethod('twint')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-                            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'twint' ? 'bg-green-400' : ''}`}></p>
+                    <fieldset className='flex gap-3 flex-col lg:flex-row'>
+                        <legend className='sr-only'>{t('paymentMethod.text1')} {t('paymentMethod.text2')}</legend>
+                        <label className='flex items-center gap-3 border p-2 px-3 cursor-pointer has-[:checked]:border-ink'>
+                            <input type='radio' name='paymentMethod' value='stripe' checked={method === 'stripe'} onChange={() => setMethod('stripe')} className='sr-only peer' />
+                            <span className='min-w-3.5 h-3.5 border rounded-full peer-checked:bg-green-400' aria-hidden='true'></span>
+                            <img className='h-5 mx-4' src={assets.stripe_logo} alt="Stripe" />
+                        </label>
+                        <label className='flex items-center gap-3 border p-2 px-3 cursor-pointer has-[:checked]:border-ink'>
+                            <input type='radio' name='paymentMethod' value='twint' checked={method === 'twint'} onChange={() => setMethod('twint')} className='sr-only peer' />
+                            <span className='min-w-3.5 h-3.5 border rounded-full peer-checked:bg-green-400' aria-hidden='true'></span>
                             <img className='h-5 mx-4' src={assets.twint_logo} alt="Twint" />
-                        </div>
-                        <div onClick={() => setMethod('cod')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer'>
-                            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-green-400' : ''}`}></p>
-                            <p className='text-gray-500 text-sm font-medium mx-4'>{t('cod')}</p>
-                        </div>
-                    </div>
+                        </label>
+                        <label className='flex items-center gap-3 border p-2 px-3 cursor-pointer has-[:checked]:border-ink'>
+                            <input type='radio' name='paymentMethod' value='cod' checked={method === 'cod'} onChange={() => setMethod('cod')} className='sr-only peer' />
+                            <span className='min-w-3.5 h-3.5 border rounded-full peer-checked:bg-green-400' aria-hidden='true'></span>
+                            <span className='text-stone text-sm font-medium mx-4'>{t('cod')}</span>
+                        </label>
+                    </fieldset>
 
-                    <label className='flex items-start gap-3 mt-8 text-sm text-gray-600 cursor-pointer'>
+                    <label className='flex items-start gap-3 mt-8 text-sm text-stone cursor-pointer'>
                         <input required type='checkbox' className='mt-0.5' checked={acceptedTerms} onChange={(event) => setAcceptedTerms(event.target.checked)} />
-                        <span>{t('termsPrefix')}<Link to='/terms' target='_blank' className='underline text-gray-800'>{t('termsLink')}</Link>{t('termsSuffix')}</span>
+                        <span>{t('termsPrefix')}<Link to='/terms' target='_blank' className='underline text-ink'>{t('termsLink')}</Link>{t('termsSuffix')}</span>
                     </label>
 
                     <div className='w-full text-end mt-6'>
-                        <button type='submit' className='bg-black text-white px-16 py-3 text-sm'>{t('placeOrderButton')}</button>
+                        <button type='submit' className='bg-ink text-paper px-16 py-3 text-sm'>{t('placeOrderButton')}</button>
                     </div>
 
                 </div>
 
             </div>
+
+            <Modal isOpen={!!qrModal} onClose={() => setQrModal(null)} titleId='twint-modal-title' className='max-w-md w-full mx-4 p-6'>
+                <h3 id='twint-modal-title' className='text-lg font-bold mb-4 text-center'>{t('twintModal.title')}</h3>
+                <div className='text-center mb-4'>
+                    <img src={qrModal?.qrCodeUrl} alt={t('twintModal.title')} className='w-48 h-48 mx-auto mb-4 border' />
+                    <p className='text-sm text-stone mb-2'>{t('twintModal.scanText')}</p>
+                    <p className='text-lg font-semibold'>CHF {qrModal?.amount?.toFixed(2)}</p>
+                </div>
+                <div className='flex gap-2'>
+                    <a href={qrModal?.paymentUrl} className='flex-1 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-center'>
+                        {t('twintModal.openPaymentPage')}
+                    </a>
+                    <button type='button' onClick={() => setQrModal(null)} className='flex-1 bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600'>
+                        {t('twintModal.cancel')}
+                    </button>
+                </div>
+            </Modal>
         </form>
     )
 }

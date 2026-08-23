@@ -8,7 +8,11 @@
     "about": "À PROPOS",
     "contact": "CONTACT",
     "login": "CONNEXION",
-    "back": "Retour"
+    "back": "Retour",
+    "searchLabel": "Rechercher",
+    "openMenu": "Ouvrir le menu",
+    "mobileMenu": "Menu mobile",
+    "cartWithCount": "Panier, {{count}} articles"
   },
   "profileMenu": {
     "myProfile": "Mon profil",
@@ -22,15 +26,39 @@
   },
   "actions": {
     "addToCart": "AJOUTER AU PANIER",
-    "viewAll": "Tout voir"
+    "viewAll": "Tout voir",
+    "addedToCart": "Ajouté au panier"
   },
   "search": {
-    "placeholder": "Rechercher"
+    "placeholder": "Rechercher",
+    "close": "Fermer la recherche"
   },
   "language": {
     "en": "English",
     "de": "Deutsch",
     "fr": "Français",
     "it": "Italiano"
+  },
+  "quantityStepper": {
+    "decrease": "Diminuer la quantité",
+    "increase": "Augmenter la quantité",
+    "label": "Quantité"
+  },
+  "filterChip": {
+    "remove": "Supprimer le filtre : {{label}}"
+  },
+  "orderStatus": {
+    "orderPlaced": "Commande passée",
+    "packing": "En préparation",
+    "shipped": "Expédiée",
+    "outForDelivery": "En cours de livraison",
+    "delivered": "Livrée"
+  },
+  "badges": {
+    "bestseller": "Meilleure vente",
+    "new": "Nouveau"
+  },
+  "a11y": {
+    "skipToContent": "Aller au contenu"
   }
 }

@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
+import { getProductBadge } from '../utils/productBadges';
 
-const RelatedProducts = ({category,subCategory}) => {
+const MIN_RESULTS = 4;
+
+const RelatedProducts = ({category,subCategory,currentProductId}) => {
 
     const { t } = useTranslation('product');
     const { products } = useContext(ShopContext);
@@ -13,16 +16,21 @@ const RelatedProducts = ({category,subCategory}) => {
     useEffect(()=>{
 
         if (products.length > 0) {
-            
-            let productsCopy = products.slice();
-            
-            productsCopy = productsCopy.filter((item) => category === item.category);
-            productsCopy = productsCopy.filter((item) => subCategory === item.subCategory);
 
-            setRelated(productsCopy.slice(0,5));
+            const others = products.filter((item) => item._id !== currentProductId);
+            const exactMatch = others.filter((item) => item.category === category && item.subCategory === subCategory);
+
+            let result = exactMatch;
+            if (result.length < MIN_RESULTS) {
+                const seen = new Set(result.map((item) => item._id));
+                const sameCategory = others.filter((item) => item.category === category && !seen.has(item._id));
+                result = [...result, ...sameCategory];
+            }
+
+            setRelated(result.slice(0,5));
         }
-        
-    },[products])
+
+    },[products, category, subCategory, currentProductId])
 
   return (
     <div className='my-24'>
@@ -31,8 +39,8 @@ const RelatedProducts = ({category,subCategory}) => {
       </div>
 
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
-        {related.map((item,index)=>(
-            <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image}/>
+        {related.map((item)=>(
+            <ProductItem key={item._id} id={item._id} name={item.name} price={item.price} image={item.image} badge={getProductBadge(item, t)} />
         ))}
       </div>
     </div>

@@ -32,7 +32,8 @@
     "kids": "Kinder",
     "topwear": "Oberteile",
     "bottomwear": "Hosen",
-    "winterwear": "Winterbekleidung"
+    "winterwear": "Winterbekleidung",
+    "clearAll": "Alle löschen"
   },
   "sort": {
     "relevant": "Sortieren: Relevanz",
@@ -47,5 +48,8 @@
   "empty": {
     "text": "Hier gibt es noch nichts.",
     "linkText": "Gesamte Kollektion durchstöbern"
+  },
+  "results": {
+    "count": "{{count}} Ergebnisse"
   }
 }

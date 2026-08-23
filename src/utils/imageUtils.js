@@ -43,3 +43,13 @@ export const getMediumImage = (url) => {
 export const getLargeImage = (url) => {
     return getOptimizedImage(url, { width: 800, height: 800 });
 };
+
+/**
+ * Build a srcset from the same Cloudinary f_auto,q_auto pipeline at several
+ * widths, so a product card on a phone doesn't download the same bytes as one
+ * on a 4K desktop. No-op (returns undefined) for non-Cloudinary sources.
+ */
+export const getSrcSet = (url, widths = [240, 400, 600, 800]) => {
+    if (!url || !url.includes('cloudinary.com')) return undefined;
+    return widths.map((width) => `${getOptimizedImage(url, { width, height: width })} ${width}w`).join(', ');
+};

@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { getBlurPlaceholder } from '../utils/imageUtils';
 
-const OptimizedImage = ({ 
-    src, 
-    alt = '', 
-    className = '', 
+const OptimizedImage = ({
+    src,
+    srcSet,
+    sizes,
+    alt = '',
+    className = '',
     containerClassName = '',
-    priority = false 
+    priority = false
 }) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const imgRef = useRef(null);
@@ -23,7 +25,7 @@ const OptimizedImage = ({
             {!isLoaded && (
                 <div className="absolute inset-0 bg-gray-200 animate-pulse" />
             )}
-            
+
             {/* Blur placeholder */}
             {!isLoaded && blurSrc && (
                 <img
@@ -33,12 +35,15 @@ const OptimizedImage = ({
                     aria-hidden="true"
                 />
             )}
-            
+
             {/* Main image - always rendered, fades in when loaded */}
             <img
                 src={src}
+                srcSet={srcSet}
+                sizes={srcSet ? sizes : undefined}
                 alt={alt}
                 loading={priority ? 'eager' : 'lazy'}
+                fetchpriority={priority ? 'high' : 'auto'}
                 className={`w-full h-full object-cover transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
                 onLoad={handleLoad}
             />

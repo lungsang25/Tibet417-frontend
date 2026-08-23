@@ -1,10 +1,23 @@
 {
-  "heading": { "text1": "IHR", "text2": "WARENKORB" },
+  "heading": {
+    "text1": "IHR",
+    "text2": "WARENKORB"
+  },
   "checkoutButton": "ZUR KASSE",
   "total": {
-    "heading": { "text1": "WARENKORB", "text2": "SUMME" },
+    "heading": {
+      "text1": "WARENKORB",
+      "text2": "SUMME"
+    },
     "subtotal": "Zwischensumme",
     "shippingFee": "Versandkosten",
     "total": "Gesamt"
-  }
+  },
+  "empty": {
+    "text": "Ihr Warenkorb ist leer.",
+    "cta": "Weiter einkaufen"
+  },
+  "lineSubtotal": "Zwischensumme: {{currency}} {{amount}}",
+  "quantityFor": "Menge für {{name}}",
+  "removeItem": "{{name}} aus dem Warenkorb entfernen"
 }

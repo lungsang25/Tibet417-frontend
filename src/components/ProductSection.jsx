@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { LocalizedLink as Link } from '../hooks/useLocalizedNavigation'
 import Title from './Title'
 import ProductItem from './ProductItem'
+import { getProductBadge } from '../utils/productBadges'
 
-const ProductCardSkeleton = () => (
+export const ProductCardSkeleton = () => (
   <div>
     <div className='aspect-[3/4] w-full bg-line animate-pulse' />
     <div className='mt-3 h-3 w-3/4 bg-line animate-pulse' />
@@ -63,6 +64,7 @@ const ProductSection = ({
                 name={item.name}
                 price={item.price}
                 priority={index < 4}
+                badge={getProductBadge(item, t)}
               />
             ))}
       </div>

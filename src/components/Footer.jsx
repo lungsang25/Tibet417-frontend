@@ -17,14 +17,14 @@ const Footer = () => {
 
         <div>
             <img src={assets.logo} className='mb-5 w-32' alt={`${siteName} logo`} />
-            <p className='w-full md:w-2/3 text-gray-600'>
+            <p className='w-full md:w-2/3 text-stone'>
             {t('description')}
             </p>
         </div>
 
         <div>
             <p className='text-xl font-medium mb-5'>{t('shop.heading')}</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
+            <ul className='flex flex-col gap-1 text-stone'>
                 <li><Link to='/collection'>{t('shop.allProducts')}</Link></li>
                 <li><Link to='/collection/men'>{t('shop.men')}</Link></li>
                 <li><Link to='/collection/women'>{t('shop.women')}</Link></li>
@@ -34,7 +34,7 @@ const Footer = () => {
 
         <div>
             <p className='text-xl font-medium mb-5'>{t('company.heading')}</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
+            <ul className='flex flex-col gap-1 text-stone'>
                 <li><Link to='/'>{t('company.home')}</Link></li>
                 <li><Link to='/about'>{t('company.aboutUs')}</Link></li>
                 <li><Link to='/contact'>{t('company.contact')}</Link></li>
@@ -45,7 +45,7 @@ const Footer = () => {
 
         <div>
             <p className='text-xl font-medium mb-5'>{t('getInTouch.heading')}</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
+            <ul className='flex flex-col gap-1 text-stone'>
                 {business.telephone && <li>{business.telephone}</li>}
                 <li><a href={`mailto:${business.email}`}>{business.email}</a></li>
             </ul>

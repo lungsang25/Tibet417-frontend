@@ -32,7 +32,8 @@
     "kids": "Kids",
     "topwear": "Topwear",
     "bottomwear": "Bottomwear",
-    "winterwear": "Winterwear"
+    "winterwear": "Winterwear",
+    "clearAll": "Clear all"
   },
   "sort": {
     "relevant": "Sort by: Relevant",
@@ -47,5 +48,8 @@
   "empty": {
     "text": "Nothing here just yet.",
     "linkText": "Browse the full collection"
+  },
+  "results": {
+    "count": "{{count}} results"
   }
 }

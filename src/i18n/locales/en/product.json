@@ -7,5 +7,19 @@
   "withdrawalNoteSuffix": ".",
   "termsLink": "Terms & Conditions",
   "descriptionTab": "Description",
-  "related": { "text1": "RELATED", "text2": "PRODUCTS" }
+  "related": {
+    "text1": "RELATED",
+    "text2": "PRODUCTS"
+  },
+  "loading": "Loading product…",
+  "notFound": {
+    "title": "Product not found",
+    "text": "We couldn't find that product — it may have been removed.",
+    "linkText": "Back to collection"
+  },
+  "quantityLabel": "Quantity",
+  "lightbox": {
+    "previous": "Previous image",
+    "next": "Next image"
+  }
 }

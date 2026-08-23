@@ -32,7 +32,8 @@
     "kids": "Enfants",
     "topwear": "Hauts",
     "bottomwear": "Bas",
-    "winterwear": "Vêtements d'hiver"
+    "winterwear": "Vêtements d'hiver",
+    "clearAll": "Tout effacer"
   },
   "sort": {
     "relevant": "Trier par : Pertinence",
@@ -47,5 +48,8 @@
   "empty": {
     "text": "Rien à afficher pour le moment.",
     "linkText": "Parcourir toute la collection"
+  },
+  "results": {
+    "count": "{{count}} résultats"
   }
 }

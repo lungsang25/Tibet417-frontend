@@ -8,7 +8,11 @@
     "about": "ABOUT",
     "contact": "CONTACT",
     "login": "LOGIN",
-    "back": "Back"
+    "back": "Back",
+    "searchLabel": "Search",
+    "openMenu": "Open menu",
+    "mobileMenu": "Mobile menu",
+    "cartWithCount": "Cart, {{count}} items"
   },
   "profileMenu": {
     "myProfile": "My Profile",
@@ -22,15 +26,39 @@
   },
   "actions": {
     "addToCart": "ADD TO CART",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "addedToCart": "Added to cart"
   },
   "search": {
-    "placeholder": "Search"
+    "placeholder": "Search",
+    "close": "Close search"
   },
   "language": {
     "en": "English",
     "de": "Deutsch",
     "fr": "Français",
     "it": "Italiano"
+  },
+  "quantityStepper": {
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "label": "Quantity"
+  },
+  "filterChip": {
+    "remove": "Remove filter: {{label}}"
+  },
+  "orderStatus": {
+    "orderPlaced": "Order Placed",
+    "packing": "Packing",
+    "shipped": "Shipped",
+    "outForDelivery": "Out for delivery",
+    "delivered": "Delivered"
+  },
+  "badges": {
+    "bestseller": "Bestseller",
+    "new": "New"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
   }
 }

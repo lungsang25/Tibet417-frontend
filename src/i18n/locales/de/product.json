@@ -7,5 +7,19 @@
   "withdrawalNoteSuffix": ".",
   "termsLink": "AGB",
   "descriptionTab": "Beschreibung",
-  "related": { "text1": "ÄHNLICHE", "text2": "PRODUKTE" }
+  "related": {
+    "text1": "ÄHNLICHE",
+    "text2": "PRODUKTE"
+  },
+  "loading": "Produkt wird geladen…",
+  "notFound": {
+    "title": "Produkt nicht gefunden",
+    "text": "Dieses Produkt konnte nicht gefunden werden — es wurde möglicherweise entfernt.",
+    "linkText": "Zurück zur Kollektion"
+  },
+  "quantityLabel": "Menge",
+  "lightbox": {
+    "previous": "Vorheriges Bild",
+    "next": "Nächstes Bild"
+  }
 }
