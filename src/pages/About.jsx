@@ -9,17 +9,6 @@ import about_img from '../assets/about_img.png?w=480;960&format=avif;webp;png&qu
 /**
  * This page is one of Google's main sources for understanding what "Tibet417"
  * actually is — and, alongside the category pages, a prime sitelink candidate.
- *
- * It previously ran generic storefront-template copy ("born out of a passion for
- * innovation… from fashion and beauty to electronics and home essentials") that
- * never mentioned Tibet, the Himalayas or Switzerland. It described no business
- * in particular, which is part of why the brand token "tibet417" resolves to a
- * rug SKU rather than to this shop.
- *
- * The copy below is grounded only in what the GTC and manifest already state.
- * TODO (owner): add the real founding story — who started it, when, and the
- * sourcing relationships behind the collection. Specifics are what make an
- * About page carry entity weight; nothing here has been invented to fill space.
  */
 const About = () => {
   const { t } = useTranslation('about')
@@ -36,6 +25,8 @@ const About = () => {
           <Title text1={t('heading.text1')} text2={t('heading.text2')} as='h1' />
       </div>
 
+      <p className='text-center italic font-display text-lg text-gray-700 max-w-2xl mx-auto mt-4'>{t('tagline')}</p>
+
       <div className='my-10 flex flex-col md:flex-row gap-16'>
           <picture>
             {about_img.sources.avif && <source type='image/avif' srcSet={about_img.sources.avif} sizes='(min-width: 768px) 450px, 100vw' />}
@@ -51,23 +42,42 @@ const About = () => {
       </div>
 
       <div className=' text-xl py-4'>
-          <Title text1={t('whyChoose.text1')} text2={t('whyChoose.text2')} as='h2' />
+          <Title text1={t('promise.text1')} text2={t('promise.text2')} as='h2' />
       </div>
 
-      <div className='flex flex-col md:flex-row text-sm mb-20'>
+      <div className='flex flex-col md:flex-row text-sm mb-16'>
           <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-            <b>{t('cards.provenance.label')}</b>
-            <p className=' text-gray-600'>{t('cards.provenance.text')}</p>
+            <b>{t('promiseCards.craftsmanship.label')}</b>
+            <p className=' text-gray-600'>{t('promiseCards.craftsmanship.text')}</p>
           </div>
           <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-            <b>{t('cards.swissDelivery.label')}</b>
-            <p className=' text-gray-600'>{t('cards.swissDelivery.text')}</p>
+            <b>{t('promiseCards.accessibility.label')}</b>
+            <p className=' text-gray-600'>{t('promiseCards.accessibility.text')}</p>
           </div>
           <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-            <b>{t('cards.withdrawal.label')}</b>
-            <p className=' text-gray-600'>{t('cards.withdrawal.text')}</p>
+            <b>{t('promiseCards.journey.label')}</b>
+            <p className=' text-gray-600'>{t('promiseCards.journey.text')}</p>
           </div>
       </div>
+
+      <div className=' text-xl py-4'>
+          <Title text1={t('swiss.text1')} text2={t('swiss.text2')} as='h2' />
+      </div>
+
+      <p className='text-gray-600 max-w-3xl mb-8'>{t('swissIntro')}</p>
+
+      <div className='flex flex-col md:flex-row text-sm mb-16'>
+          <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
+            <b>{t('swissCards.pricing.label')}</b>
+            <p className=' text-gray-600'>{t('swissCards.pricing.text')}</p>
+          </div>
+          <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
+            <b>{t('swissCards.delivery.label')}</b>
+            <p className=' text-gray-600'>{t('swissCards.delivery.text')}</p>
+          </div>
+      </div>
+
+      <p className='text-center italic text-gray-600 max-w-2xl mx-auto mb-20'>{t('closing')}</p>
 
     </div>
   )

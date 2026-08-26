@@ -5,23 +5,37 @@
   },
   "heading": { "text1": "À PROPOS", "text2": "DE NOUS" },
   "imgAlt": "Collection tibétaine et himalayenne Tibet417",
-  "intro1": "Tibet417 existe pour faire découvrir l'artisanat tibétain et himalayen aux personnes vivant en Suisse. Nous travaillons avec des vêtements et accessoires ancrés dans les traditions artisanales himalayennes — des pièces choisies pour leur matière, leur fabrication et leur origine, plutôt que pour la rapidité de leur production.",
-  "intro2": "Nous sommes une petite entreprise suisse. Notre offre s'adresse aux clients domiciliés en Suisse, les prix sont indiqués nets en francs suisses, et les commandes sont expédiées depuis la Suisse par la poste ou par coursier.",
+  "tagline": "Là où l'âme de l'Himalaya rencontre l'élégance suisse",
+  "intro1": "Chez Tibet417, nous croyons que le véritable luxe ne se porte jamais simplement — il se ressent profondément. C'est une confiance tranquille, une chaleur réconfortante et le reflet de qui vous êtes vraiment.",
+  "intro2": "Nées au cœur de la Suisse, nous sommes une petite équipe dévouée, unie par une vision unique et magnifique : tisser l'héritage riche et intemporel de la culture tibétaine dans les lignes épurées et sophistiquées de la mode occidentale contemporaine. Nous savons que votre style est aussi vivant que votre vie — il respire, il évolue et se transforme à vos côtés.",
   "missionLabel": "Notre mission",
-  "missionText": "Rendre le design himalayen accessible ici sans en aplatir ce qui en fait la valeur : une provenance honnête, des prix clairs, et une boutique assez petite pour répondre de chaque pièce qu'elle vend.",
-  "whyChoose": { "text1": "POURQUOI", "text2": "NOUS CHOISIR" },
-  "cards": {
-    "provenance": {
-      "label": "Provenance :",
-      "text": "Notre collection est issue des traditions artisanales tibétaines et himalayennes, et nous sommes transparents sur l'origine de chaque pièce."
+  "missionText": "Notre mission est simple, et pourtant profondément personnelle : répondre à vos souhaits, sublimer votre style et vous faire vous sentir au mieux de vous-même. C'est pourquoi chaque pièce que nous créons est pensée pour se mouvoir avec grâce, honorant des traditions ancestrales tout en embrassant pleinement le rythme d'aujourd'hui.",
+  "promise": { "text1": "NOTRE", "text2": "PROMESSE" },
+  "promiseCards": {
+    "craftsmanship": {
+      "label": "Un savoir-faire durable :",
+      "text": "Chaque vêtement est un geste d'amour, pensé pour se porter comme une seconde peau. Nous ne sélectionnons que les matières les plus fines et les plus durables, pour que vos pièces préférées vous accompagnent à chaque saison de la vie."
     },
-    "swissDelivery": {
-      "label": "Livraison depuis la Suisse :",
-      "text": "Les commandes sont expédiées depuis la Suisse par la poste ou par coursier, avec des prix en CHF incluant la TVA suisse."
+    "accessibility": {
+      "label": "Le luxe accessible :",
+      "text": "Nous croyons qu'une qualité exceptionnelle et un design inspiré devraient être accessibles. En restant fidèles à nos valeurs et exigeants sur nos standards, nous offrons un luxe véritable, à un prix qui honore votre investissement."
     },
-    "withdrawal": {
-      "label": "Droit de rétractation de 10 jours :",
-      "text": "Vous disposez de dix jours calendaires après réception pour vous rétracter de votre achat, sans avoir à justifier de motif, conformément à nos conditions générales."
+    "journey": {
+      "label": "Un chemin que nous partageons :",
+      "text": "Pour nous, vous n'êtes jamais une simple transaction ; vous faites partie intégrante de notre histoire. Que ce soit pour un grand moment ou pour le réconfort du quotidien, nous accompagnons votre expression personnelle avec empathie, chaleur et un dévouement sans faille."
     }
-  }
+  },
+  "swiss": { "text1": "CONÇU POUR", "text2": "LA SUISSE" },
+  "swissIntro": "Fièrement enracinées en Suisse, nous voulons que votre parcours avec Tibet417 soit aussi fluide, rassurant et transparent que les vêtements que vous portez.",
+  "swissCards": {
+    "pricing": {
+      "label": "Des prix honnêtes :",
+      "text": "Chaque prix est présenté avec soin en CHF, TVA suisse incluse, pour une clarté absolue dès l'instant où vous avez le coup de cœur pour une pièce."
+    },
+    "delivery": {
+      "label": "Une livraison rapide et fiable :",
+      "text": "Chaque commande est emballée avec soin et expédiée directement depuis la Suisse par la poste ou par coursier, apportant une touche de grâce himalayenne jusqu'à votre porte."
+    }
+  },
+  "closing": "Merci de nous accueillir dans votre garde-robe, vos grands moments et vos instants du quotidien. C'est un profond honneur pour nous de cheminer, et de vivre, à vos côtés."
 }

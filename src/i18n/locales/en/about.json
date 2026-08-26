@@ -5,23 +5,37 @@
   },
   "heading": { "text1": "ABOUT", "text2": "US" },
   "imgAlt": "Tibet417 Tibetan and Himalayan collection",
-  "intro1": "Tibet417 exists to bring Tibetan and Himalayan craft to people living in Switzerland. We work with clothing and accessories rooted in Himalayan making traditions — pieces chosen for their material, their construction and where they come from, rather than for how quickly they can be produced.",
-  "intro2": "We are a small Swiss business. Our offering is directed at customers domiciled in Switzerland, prices are stated net in Swiss francs, and orders are dispatched from Switzerland by post or courier.",
+  "tagline": "Where the Soul of the Himalayas Embraces Swiss Elegance",
+  "intro1": "At Tibet417, we believe that true luxury is never just worn — it is deeply felt. It is a quiet confidence, a comforting warmth, and a reflection of who you truly are.",
+  "intro2": "Born in the heart of Switzerland, we are a small, devoted team united by a single, beautiful vision: to weave the rich, timeless heritage of Tibetan culture into the sleek, sophisticated lines of modern Western fashion. We know your style is as dynamic as your life — it breathes, it shifts, and it evolves right alongside you.",
   "missionLabel": "Our Mission",
-  "missionText": "To make Himalayan design available here without flattening what makes it worth having: honest provenance, clear pricing, and a shop small enough to answer for every piece it sells.",
-  "whyChoose": { "text1": "WHY", "text2": "CHOOSE US" },
-  "cards": {
-    "provenance": {
-      "label": "Provenance:",
-      "text": "Our collection is drawn from Tibetan and Himalayan making traditions, and we are direct about where a piece comes from."
+  "missionText": "Our mission is simple yet deeply personal: to fulfill your unique wishes, elevate your personal style, and help you look and feel your absolute best. Every piece we create is designed to move with grace, honoring age-old traditions while boldly embracing the rhythm of today's world.",
+  "promise": { "text1": "OUR SACRED", "text2": "PROMISE" },
+  "promiseCards": {
+    "craftsmanship": {
+      "label": "Enduring Craftsmanship:",
+      "text": "Every garment is a labor of love, created to feel like a second skin. We source only the finest, most durable materials so that your favorite pieces stay with you through every season of life."
     },
-    "swissDelivery": {
-      "label": "Swiss delivery:",
-      "text": "Orders are dispatched within Switzerland by post or courier, with prices in CHF including Swiss VAT."
+    "accessibility": {
+      "label": "Luxury Within Reach:",
+      "text": "We believe that exceptional quality and soulful design should be accessible. By keeping our values close and our standards high, we deliver true luxury at a price that honors your investment."
     },
-    "withdrawal": {
-      "label": "A 10-day right of withdrawal:",
-      "text": "You have ten calendar days after receipt to withdraw from your purchase, no reasons required, as set out in our Terms."
+    "journey": {
+      "label": "A Journey We Share:",
+      "text": "To us, you are never just a transaction — you are a cherished part of our story. Whether you are stepping out for a grand moment or seeking comfort in the everyday, we are here to support your personal expression with empathy, warmth, and unwavering dedication."
     }
-  }
+  },
+  "swiss": { "text1": "CRAFTED FOR", "text2": "SWITZERLAND" },
+  "swissIntro": "Proudly rooted in Switzerland, we want your journey with Tibet417 to be as seamless, comforting, and transparent as the clothes you wear.",
+  "swissCards": {
+    "pricing": {
+      "label": "Honest Pricing:",
+      "text": "Every price is thoughtfully presented in CHF, fully inclusive of Swiss VAT, ensuring absolute clarity from the moment you fall in love with a piece."
+    },
+    "delivery": {
+      "label": "Swift, Reliable Delivery:",
+      "text": "Every order is lovingly packaged and dispatched directly within Switzerland via trusted local post or courier, bringing a touch of Himalayan grace straight to your doorstep."
+    }
+  },
+  "closing": "Thank you for welcoming us into your wardrobe, your milestones, and your quiet everyday moments. We are deeply honored to walk this path — and this life — alongside you."
 }

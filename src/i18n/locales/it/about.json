@@ -5,23 +5,37 @@
   },
   "heading": { "text1": "CHI", "text2": "SIAMO" },
   "imgAlt": "Collezione tibetana e himalayana Tibet417",
-  "intro1": "Tibet417 esiste per portare l'artigianato tibetano e himalayano alle persone che vivono in Svizzera. Lavoriamo con abbigliamento e accessori radicati nelle tradizioni artigianali himalayane — capi scelti per il materiale, la lavorazione e la provenienza, non per la velocità con cui possono essere prodotti.",
-  "intro2": "Siamo una piccola azienda svizzera. La nostra offerta è rivolta a clienti domiciliati in Svizzera, i prezzi sono indicati al netto in franchi svizzeri e gli ordini vengono spediti dalla Svizzera per posta o corriere.",
+  "tagline": "Dove l'anima dell'Himalaya incontra l'eleganza svizzera",
+  "intro1": "Da Tibet417 crediamo che il vero lusso non si indossi soltanto, ma si senta profondamente. È una quieta sicurezza, un calore che conforta, il riflesso di chi sei davvero.",
+  "intro2": "Nate nel cuore della Svizzera, siamo un piccolo team appassionato, unito da un'unica, meravigliosa visione: intrecciare la ricca e senza tempo eredità della cultura tibetana con le linee eleganti e moderne della moda occidentale. Sappiamo che il tuo stile è dinamico quanto la tua vita — respira, si trasforma ed evolve insieme a te.",
   "missionLabel": "La nostra missione",
-  "missionText": "Rendere disponibile qui il design himalayano senza appiattire ciò che lo rende prezioso: provenienza onesta, prezzi chiari e un negozio abbastanza piccolo da rispondere di ogni capo venduto.",
-  "whyChoose": { "text1": "PERCHÉ", "text2": "SCEGLIERCI" },
-  "cards": {
-    "provenance": {
-      "label": "Provenienza:",
-      "text": "La nostra collezione nasce dalle tradizioni artigianali tibetane e himalayane e siamo trasparenti sulla provenienza di ogni capo."
+  "missionText": "La nostra missione è semplice, eppure profondamente personale: soddisfare i tuoi desideri, valorizzare il tuo stile e farti sentire al tuo meglio. Per questo ogni capo che creiamo è pensato per muoversi con grazia, onorando tradizioni antiche e abbracciando con coraggio il ritmo di oggi.",
+  "promise": { "text1": "LA NOSTRA", "text2": "PROMESSA" },
+  "promiseCards": {
+    "craftsmanship": {
+      "label": "Un'artigianalità che dura nel tempo:",
+      "text": "Ogni capo nasce da un gesto d'amore, pensato per essere indossato come una seconda pelle. Scegliamo solo i materiali più pregiati e resistenti, perché i tuoi capi preferiti possano accompagnarti in ogni stagione della vita."
     },
-    "swissDelivery": {
-      "label": "Spedizione dalla Svizzera:",
-      "text": "Gli ordini vengono spediti dalla Svizzera per posta o corriere, con prezzi in CHF che includono l'IVA svizzera."
+    "accessibility": {
+      "label": "Il lusso a portata di mano:",
+      "text": "Crediamo che una qualità eccezionale e un design ricco di significato debbano essere accessibili. Restando fedeli ai nostri valori e mantenendo standard elevati, offriamo un lusso autentico, a un prezzo che rende onore al tuo investimento."
     },
-    "withdrawal": {
-      "label": "Diritto di recesso di 10 giorni:",
-      "text": "Hai dieci giorni di calendario dal ricevimento per recedere dall'acquisto, senza dover indicare motivi, come previsto dai nostri termini e condizioni."
+    "journey": {
+      "label": "Un percorso che condividiamo:",
+      "text": "Per noi non sei mai solo una transazione: sei parte preziosa della nostra storia. Che tu stia per vivere un grande momento o cerchi conforto nella quotidianità, siamo al tuo fianco per sostenere la tua espressione personale con empatia, calore e dedizione instancabile."
     }
-  }
+  },
+  "swiss": { "text1": "PENSATO PER", "text2": "LA SVIZZERA" },
+  "swissIntro": "Con radici salde in Svizzera, vogliamo che il tuo percorso con Tibet417 sia fluido, rassicurante e trasparente quanto gli abiti che indossi.",
+  "swissCards": {
+    "pricing": {
+      "label": "Prezzi trasparenti:",
+      "text": "Ogni prezzo è indicato con cura in CHF, IVA svizzera inclusa, per garantirti la massima chiarezza fin dal primo istante in cui ti innamori di un capo."
+    },
+    "delivery": {
+      "label": "Consegna rapida e affidabile:",
+      "text": "Ogni ordine viene confezionato con cura e spedito direttamente dalla Svizzera tramite posta o corriere di fiducia, portando un tocco di grazia himalayana fino alla tua porta."
+    }
+  },
+  "closing": "Grazie per averci accolto nel tuo guardaroba, nei tuoi momenti importanti e nella quiete della tua quotidianità. È per noi un grande onore percorrere questo cammino — e questa vita — accanto a te."
 }

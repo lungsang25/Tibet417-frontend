@@ -5,23 +5,37 @@
   },
   "heading": { "text1": "ÜBER", "text2": "UNS" },
   "imgAlt": "Tibetische und himalajanische Kollektion von Tibet417",
-  "intro1": "Tibet417 bringt tibetisches und himalajanisches Handwerk zu Menschen in der Schweiz. Wir arbeiten mit Kleidung und Accessoires, die in himalajanischen Handwerkstraditionen verwurzelt sind — Stücke, die wegen ihres Materials, ihrer Verarbeitung und ihrer Herkunft ausgewählt werden, nicht danach, wie schnell sie hergestellt werden können.",
-  "intro2": "Wir sind ein kleines Schweizer Unternehmen. Unser Angebot richtet sich an Kundinnen und Kunden mit Wohnsitz in der Schweiz, Preise verstehen sich netto in Schweizer Franken, und Bestellungen werden aus der Schweiz per Post oder Kurier versandt.",
+  "tagline": "Wo die Seele des Himalaya auf Schweizer Eleganz trifft",
+  "intro1": "Bei Tibet417 glauben wir, dass wahrer Luxus nie nur getragen, sondern tief empfunden wird. Er ist eine stille Zuversicht, eine wohltuende Wärme und ein Spiegelbild dessen, wer Sie wirklich sind.",
+  "intro2": "Im Herzen der Schweiz geboren, sind wir ein kleines, engagiertes Team mit einer gemeinsamen, wunderschönen Vision: das reiche, zeitlose Erbe der tibetischen Kultur mit den klaren, eleganten Linien moderner westlicher Mode zu verweben. Wir wissen, dass Ihr Stil genauso lebendig ist wie Ihr Leben – er atmet, verändert sich und entwickelt sich mit Ihnen weiter.",
   "missionLabel": "Unsere Mission",
-  "missionText": "Himalajanisches Design hier verfügbar zu machen, ohne das zu verwässern, was es lohnenswert macht: ehrliche Herkunft, klare Preise und ein Geschäft, das klein genug ist, um für jedes verkaufte Stück geradezustehen.",
-  "whyChoose": { "text1": "WARUM", "text2": "UNS WÄHLEN" },
-  "cards": {
-    "provenance": {
-      "label": "Herkunft:",
-      "text": "Unsere Kollektion stammt aus tibetischen und himalajanischen Handwerkstraditionen, und wir sind transparent darüber, woher ein Stück kommt."
+  "missionText": "Unsere Mission ist einfach und zugleich zutiefst persönlich: Ihre individuellen Wünsche zu erfüllen, Ihren persönlichen Stil zu unterstreichen und Sie sich rundum wohlfühlen zu lassen. Deshalb wird jedes unserer Stücke mit Anmut gestaltet – verwurzelt in altehrwürdigen Traditionen und zugleich offen für den Rhythmus der heutigen Zeit.",
+  "promise": { "text1": "UNSER", "text2": "VERSPRECHEN" },
+  "promiseCards": {
+    "craftsmanship": {
+      "label": "Beständige Handwerkskunst:",
+      "text": "Jedes Kleidungsstück ist eine Herzensangelegenheit, geschaffen, um sich wie eine zweite Haut anzufühlen. Wir verwenden ausschliesslich hochwertigste, langlebige Materialien, damit Ihre Lieblingsstücke Sie durch jede Lebensphase begleiten."
     },
-    "swissDelivery": {
-      "label": "Versand aus der Schweiz:",
-      "text": "Bestellungen werden innerhalb der Schweiz per Post oder Kurier versandt, mit Preisen in CHF inklusive Schweizer Mehrwertsteuer."
+    "accessibility": {
+      "label": "Luxus zum Greifen nah:",
+      "text": "Wir glauben, dass aussergewöhnliche Qualität und stilvolles Design zugänglich sein sollten. Indem wir unseren Werten treu bleiben und hohe Standards setzen, bieten wir echten Luxus zu einem Preis, der Ihre Investition ehrt."
     },
-    "withdrawal": {
-      "label": "10 Tage Widerrufsrecht:",
-      "text": "Sie haben zehn Kalendertage nach Erhalt Zeit, um von Ihrem Kauf zurückzutreten, ohne Angabe von Gründen, wie in unseren AGB festgelegt."
+    "journey": {
+      "label": "Ein gemeinsamer Weg:",
+      "text": "Für uns sind Sie nie nur eine Transaktion, sondern ein geschätzter Teil unserer Geschichte. Ob für einen besonderen Moment oder für den Komfort des Alltags – wir begleiten Ihren persönlichen Ausdruck mit Einfühlungsvermögen, Wärme und Hingabe."
     }
-  }
+  },
+  "swiss": { "text1": "GEMACHT FÜR", "text2": "DIE SCHWEIZ" },
+  "swissIntro": "Mit Stolz in der Schweiz verwurzelt, möchten wir, dass Ihre Erfahrung mit Tibet417 genauso nahtlos, angenehm und transparent ist wie die Kleidung, die Sie tragen.",
+  "swissCards": {
+    "pricing": {
+      "label": "Ehrliche Preise:",
+      "text": "Jeder Preis wird transparent in CHF ausgewiesen, inklusive Schweizer Mehrwertsteuer, damit von dem Moment an, in dem Sie sich in ein Stück verlieben, absolute Klarheit herrscht."
+    },
+    "delivery": {
+      "label": "Schnelle, zuverlässige Lieferung:",
+      "text": "Jede Bestellung wird liebevoll verpackt und direkt innerhalb der Schweiz per Post oder Kurier versandt – ein Hauch himalajanischer Anmut direkt vor Ihre Haustür."
+    }
+  },
+  "closing": "Vielen Dank, dass Sie uns in Ihrer Garderobe, Ihren besonderen Momenten und Ihrem stillen Alltag willkommen heissen. Es ist uns eine grosse Ehre, diesen Weg – und dieses Leben – gemeinsam mit Ihnen zu gehen."
 }
