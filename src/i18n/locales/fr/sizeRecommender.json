@@ -1,0 +1,46 @@
+{
+  "title": "Trouvez votre taille parfaite",
+  "buttonText": "Trouver ma taille",
+  "description": "Entrez vos mensurations pour obtenir une recommandation de taille personnalisée pour ce produit.",
+  "fields": {
+    "height": "Taille",
+    "weight": "Poids",
+    "chest": "Tour de poitrine",
+    "waist": "Tour de taille",
+    "hips": "Tour de hanches",
+    "inseam": "Entrejambe"
+  },
+  "requiredNote": "* Champs obligatoires",
+  "showGuide": "Comment mesurer?",
+  "hideGuide": "Masquer le guide",
+  "guide": {
+    "title": "Comment prendre vos mesures",
+    "height": "Taille: Tenez-vous droit contre un mur sans chaussures",
+    "chest": "Tour de poitrine: Mesurez autour de la partie la plus large de votre poitrine",
+    "waist": "Tour de taille: Mesurez autour de votre taille naturelle",
+    "hips": "Tour de hanches: Mesurez autour de la partie la plus large de vos hanches",
+    "inseam": "Entrejambe: Mesurez de l'entrejambe à la cheville le long de l'intérieur de votre jambe"
+  },
+  "findMySize": "Trouver ma taille",
+  "calculating": "Calcul en cours...",
+  "cancel": "Annuler",
+  "validation": {
+    "heightRequired": "Veuillez entrer votre taille",
+    "chestRequired": "Veuillez entrer votre tour de poitrine",
+    "waistRequired": "Veuillez entrer votre tour de taille"
+  },
+  "result": {
+    "title": "Votre taille recommandée",
+    "confidence": "Confiance de correspondance",
+    "fit": {
+      "perfect": "Ajustement parfait - Cette taille correspond parfaitement à vos mesures",
+      "great": "Excellent ajustement - Cette taille devrait vous aller très bien",
+      "good": "Bon ajustement - Cette taille devrait vous convenir",
+      "approximate": "Ajustement approximatif - Envisagez d'essayer cette taille"
+    },
+    "alternatives": "Vous pourriez également considérer",
+    "selectSize": "Sélectionner cette taille",
+    "tryAgain": "Recalculer"
+  },
+  "sizeSelected": "Taille {{size}} sélectionnée"
+}

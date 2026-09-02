@@ -1,0 +1,46 @@
+{
+  "title": "Find Your Perfect Size",
+  "buttonText": "Find Your Size",
+  "description": "Enter your body measurements to get a personalized size recommendation for this product.",
+  "fields": {
+    "height": "Height",
+    "weight": "Weight",
+    "chest": "Chest",
+    "waist": "Waist",
+    "hips": "Hips",
+    "inseam": "Inseam"
+  },
+  "requiredNote": "* Required fields",
+  "showGuide": "How to measure?",
+  "hideGuide": "Hide guide",
+  "guide": {
+    "title": "How to Take Your Measurements",
+    "height": "Height: Stand straight against a wall without shoes",
+    "chest": "Chest: Measure around the fullest part of your chest",
+    "waist": "Waist: Measure around your natural waistline",
+    "hips": "Hips: Measure around the fullest part of your hips",
+    "inseam": "Inseam: Measure from crotch to ankle along the inside of your leg"
+  },
+  "findMySize": "Find My Size",
+  "calculating": "Calculating...",
+  "cancel": "Cancel",
+  "validation": {
+    "heightRequired": "Please enter your height",
+    "chestRequired": "Please enter your chest measurement",
+    "waistRequired": "Please enter your waist measurement"
+  },
+  "result": {
+    "title": "Your Recommended Size",
+    "confidence": "Match Confidence",
+    "fit": {
+      "perfect": "Perfect Fit - This size matches your measurements excellently",
+      "great": "Great Fit - This size should fit you very well",
+      "good": "Good Fit - This size should work for you",
+      "approximate": "Approximate Fit - Consider trying this size"
+    },
+    "alternatives": "You might also consider",
+    "selectSize": "Select This Size",
+    "tryAgain": "Recalculate"
+  },
+  "sizeSelected": "Size {{size}} selected"
+}

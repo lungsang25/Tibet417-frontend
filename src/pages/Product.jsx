@@ -11,6 +11,8 @@ import { LocalizedLink as Link } from '../hooks/useLocalizedNavigation';
 import PageLoader from '../components/PageLoader';
 import QuantityStepper from '../components/QuantityStepper';
 import Modal from '../components/Modal';
+import SizeRecommender from '../components/SizeRecommender';
+import SizeRecommenderButton from '../components/SizeRecommenderButton';
 
 const Product = () => {
 
@@ -22,6 +24,7 @@ const Product = () => {
   const [size,setSize] = useState('')
   const [quantity, setQuantity] = useState(1)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [sizeRecommenderOpen, setSizeRecommenderOpen] = useState(false)
 
   const fetchProductData = async () => {
 
@@ -175,6 +178,7 @@ const Product = () => {
                   <button onClick={()=>setSize(item)} aria-pressed={item === size} className={`border py-2 px-4 bg-line ${item === size ? 'border-orange-500' : ''}`} key={index}>{item}</button>
                 ))}
               </div>
+              <SizeRecommenderButton onClick={() => setSizeRecommenderOpen(true)} />
           </div>
           <div className='flex flex-col gap-2 mb-6'>
             <p>{t('quantityLabel')}</p>
@@ -253,6 +257,13 @@ const Product = () => {
           )}
         </div>
       </Modal>
+
+      <SizeRecommender
+        isOpen={sizeRecommenderOpen}
+        onClose={() => setSizeRecommenderOpen(false)}
+        productData={productData}
+        onSizeSelect={(selectedSize) => setSize(selectedSize)}
+      />
     </div>
   )
 }

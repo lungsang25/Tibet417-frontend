@@ -14,6 +14,7 @@ import enCheckout from './locales/en/checkout.json'
 import enAccount from './locales/en/account.json'
 import enTerms from './locales/en/terms.json'
 import enImpressum from './locales/en/impressum.json'
+import enSizeRecommender from './locales/en/sizeRecommender.json'
 
 import deCommon from './locales/de/common.json'
 import deFooter from './locales/de/footer.json'
@@ -27,6 +28,7 @@ import deCheckout from './locales/de/checkout.json'
 import deAccount from './locales/de/account.json'
 import deTerms from './locales/de/terms.json'
 import deImpressum from './locales/de/impressum.json'
+import deSizeRecommender from './locales/de/sizeRecommender.json'
 
 import frCommon from './locales/fr/common.json'
 import frFooter from './locales/fr/footer.json'
@@ -40,6 +42,7 @@ import frCheckout from './locales/fr/checkout.json'
 import frAccount from './locales/fr/account.json'
 import frTerms from './locales/fr/terms.json'
 import frImpressum from './locales/fr/impressum.json'
+import frSizeRecommender from './locales/fr/sizeRecommender.json'
 
 import itCommon from './locales/it/common.json'
 import itFooter from './locales/it/footer.json'
@@ -53,27 +56,28 @@ import itCheckout from './locales/it/checkout.json'
 import itAccount from './locales/it/account.json'
 import itTerms from './locales/it/terms.json'
 import itImpressum from './locales/it/impressum.json'
+import itSizeRecommender from './locales/it/sizeRecommender.json'
 
 const resources = {
   en: {
     common: enCommon, footer: enFooter, home: enHome, about: enAbout, contact: enContact,
     collection: enCollection, product: enProduct, cart: enCart, checkout: enCheckout,
-    account: enAccount, terms: enTerms, impressum: enImpressum,
+    account: enAccount, terms: enTerms, impressum: enImpressum, sizeRecommender: enSizeRecommender,
   },
   de: {
     common: deCommon, footer: deFooter, home: deHome, about: deAbout, contact: deContact,
     collection: deCollection, product: deProduct, cart: deCart, checkout: deCheckout,
-    account: deAccount, terms: deTerms, impressum: deImpressum,
+    account: deAccount, terms: deTerms, impressum: deImpressum, sizeRecommender: deSizeRecommender,
   },
   fr: {
     common: frCommon, footer: frFooter, home: frHome, about: frAbout, contact: frContact,
     collection: frCollection, product: frProduct, cart: frCart, checkout: frCheckout,
-    account: frAccount, terms: frTerms, impressum: frImpressum,
+    account: frAccount, terms: frTerms, impressum: frImpressum, sizeRecommender: frSizeRecommender,
   },
   it: {
     common: itCommon, footer: itFooter, home: itHome, about: itAbout, contact: itContact,
     collection: itCollection, product: itProduct, cart: itCart, checkout: itCheckout,
-    account: itAccount, terms: itTerms, impressum: itImpressum,
+    account: itAccount, terms: itTerms, impressum: itImpressum, sizeRecommender: itSizeRecommender,
   },
 }
 

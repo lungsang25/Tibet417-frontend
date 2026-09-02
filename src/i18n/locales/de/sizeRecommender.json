@@ -1,0 +1,46 @@
+{
+  "title": "Finden Sie Ihre perfekte Größe",
+  "buttonText": "Größe finden",
+  "description": "Geben Sie Ihre Körpermaße ein, um eine personalisierte Größenempfehlung für dieses Produkt zu erhalten.",
+  "fields": {
+    "height": "Körpergröße",
+    "weight": "Gewicht",
+    "chest": "Brustumfang",
+    "waist": "Taillenumfang",
+    "hips": "Hüftumfang",
+    "inseam": "Schrittlänge"
+  },
+  "requiredNote": "* Pflichtfelder",
+  "showGuide": "Wie messe ich?",
+  "hideGuide": "Anleitung ausblenden",
+  "guide": {
+    "title": "So nehmen Sie Ihre Maße",
+    "height": "Körpergröße: Stehen Sie gerade an einer Wand ohne Schuhe",
+    "chest": "Brustumfang: Messen Sie um die vollste Stelle Ihrer Brust",
+    "waist": "Taillenumfang: Messen Sie um Ihre natürliche Taille",
+    "hips": "Hüftumfang: Messen Sie um die vollste Stelle Ihrer Hüften",
+    "inseam": "Schrittlänge: Messen Sie vom Schritt bis zum Knöchel an der Innenseite Ihres Beins"
+  },
+  "findMySize": "Größe ermitteln",
+  "calculating": "Berechne...",
+  "cancel": "Abbrechen",
+  "validation": {
+    "heightRequired": "Bitte geben Sie Ihre Körpergröße ein",
+    "chestRequired": "Bitte geben Sie Ihren Brustumfang ein",
+    "waistRequired": "Bitte geben Sie Ihren Taillenumfang ein"
+  },
+  "result": {
+    "title": "Ihre empfohlene Größe",
+    "confidence": "Passgenauigkeit",
+    "fit": {
+      "perfect": "Perfekte Passform - Diese Größe passt ausgezeichnet zu Ihren Maßen",
+      "great": "Sehr gute Passform - Diese Größe sollte Ihnen sehr gut passen",
+      "good": "Gute Passform - Diese Größe sollte für Sie funktionieren",
+      "approximate": "Ungefähre Passform - Erwägen Sie, diese Größe auszuprobieren"
+    },
+    "alternatives": "Sie könnten auch in Betracht ziehen",
+    "selectSize": "Diese Größe wählen",
+    "tryAgain": "Neu berechnen"
+  },
+  "sizeSelected": "Größe {{size}} ausgewählt"
+}

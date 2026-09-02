@@ -1,0 +1,46 @@
+{
+  "title": "Trova la tua taglia perfetta",
+  "buttonText": "Trova la mia taglia",
+  "description": "Inserisci le tue misure corporee per ottenere una raccomandazione di taglia personalizzata per questo prodotto.",
+  "fields": {
+    "height": "Altezza",
+    "weight": "Peso",
+    "chest": "Torace",
+    "waist": "Vita",
+    "hips": "Fianchi",
+    "inseam": "Cavallo"
+  },
+  "requiredNote": "* Campi obbligatori",
+  "showGuide": "Come misurare?",
+  "hideGuide": "Nascondi guida",
+  "guide": {
+    "title": "Come prendere le tue misure",
+    "height": "Altezza: Stai dritto contro un muro senza scarpe",
+    "chest": "Torace: Misura intorno alla parte più ampia del tuo torace",
+    "waist": "Vita: Misura intorno alla tua vita naturale",
+    "hips": "Fianchi: Misura intorno alla parte più ampia dei tuoi fianchi",
+    "inseam": "Cavallo: Misura dal cavallo alla caviglia lungo l'interno della gamba"
+  },
+  "findMySize": "Trova la mia taglia",
+  "calculating": "Calcolo in corso...",
+  "cancel": "Annulla",
+  "validation": {
+    "heightRequired": "Inserisci la tua altezza",
+    "chestRequired": "Inserisci la misura del torace",
+    "waistRequired": "Inserisci la misura della vita"
+  },
+  "result": {
+    "title": "La tua taglia consigliata",
+    "confidence": "Affidabilità della corrispondenza",
+    "fit": {
+      "perfect": "Vestibilità perfetta - Questa taglia corrisponde perfettamente alle tue misure",
+      "great": "Ottima vestibilità - Questa taglia dovrebbe starti molto bene",
+      "good": "Buona vestibilità - Questa taglia dovrebbe funzionare per te",
+      "approximate": "Vestibilità approssimativa - Considera di provare questa taglia"
+    },
+    "alternatives": "Potresti anche considerare",
+    "selectSize": "Seleziona questa taglia",
+    "tryAgain": "Ricalcola"
+  },
+  "sizeSelected": "Taglia {{size}} selezionata"
+}
