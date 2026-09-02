@@ -1,0 +1,38 @@
+{
+  "heading": { "text1": "I MIEI", "text2": "PREMI" },
+  "loading": "Caricamento dei suoi premi…",
+  "loadFailed": "Impossibile caricare i suoi premi — riprovi.",
+  "notActive": "Il programma bonus non è ancora attivo — torni a trovarci presto.",
+  "balance": {
+    "confirmed": "Punti disponibili",
+    "pending": "Punti in sospeso",
+    "pointsUnit": "punti",
+    "pendingNote": "Accreditati non appena l'ordine collegato viene consegnato."
+  },
+  "referral": {
+    "heading": "Inviti un amico",
+    "description": "Condivida il suo link. Quando un amico invitato effettua il primo ordine idoneo, otterrete entrambi punti bonus.",
+    "copy": "Copia link",
+    "copied": "Copiato",
+    "copyFailed": "Copia non riuscita — selezioni il link manualmente.",
+    "stats": "{{referred}} amici invitati · {{converted}} le hanno fatto guadagnare punti"
+  },
+  "history": {
+    "heading": "Cronologia punti",
+    "empty": "Nessuna attività punti finora.",
+    "types": {
+      "welcome": "Bonus di benvenuto",
+      "purchase": "Punti da acquisto",
+      "referral_referrer": "Bonus invito (ha invitato un amico)",
+      "referral_referee": "Bonus invito (accolto tramite un amico)",
+      "redemption": "Punti riscattati",
+      "clawback": "Rettifica (ordine annullato/rimborsato)",
+      "admin_adjustment": "Rettifica manuale"
+    },
+    "status": {
+      "pending": "In sospeso",
+      "confirmed": "Confermato",
+      "voided": "Annullato"
+    }
+  }
+}

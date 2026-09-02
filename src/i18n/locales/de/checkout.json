@@ -27,5 +27,15 @@
     "paymentUrlUnavailable": "Zahlungslink nicht verfügbar",
     "twintSuccess": "Twint-Zahlung erfolgreich!",
     "paymentVerificationFailed": "Zahlungsüberprüfung fehlgeschlagen"
+  },
+  "bonusPoints": {
+    "heading": "Bonuspunkte",
+    "available": "{{count}} Punkte verfügbar",
+    "applyLabel": "Einzulösende Punkte",
+    "apply": "Einlösen",
+    "applied": "{{points}} Punkte eingelöst (−{{amount}})",
+    "remove": "Entfernen",
+    "maxNote": "Bis zu {{percent}}% Ihrer Bestellung können mit Punkten bezahlt werden.",
+    "minNote": "Mindestens {{min}} Punkte zum Einlösen."
   }
 }

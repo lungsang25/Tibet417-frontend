@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocalizedLink as Link } from '../hooks/useLocalizedNavigation'
 import Title from '../components/Title'
@@ -15,7 +15,59 @@ const PlaceOrder = () => {
     const [method, setMethod] = useState('cod');
     const [acceptedTerms, setAcceptedTerms] = useState(false);
     const [qrModal, setQrModal] = useState(null);
-    const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
+    const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products, currency } = useContext(ShopContext);
+
+    // ── Redeemable Bonus Program: points redemption ─────────────────────────
+    // A checkout-time PREVIEW only — clamped here purely for UX, since the
+    // server (bonusService.computeRedemption) always recomputes and enforces
+    // the real cap from the customer's actual balance at order-placement time.
+    const [redemption, setRedemption] = useState(null) // { redeemRatePerCurrencyUnit, maxRedemptionPercent, minRedeemPoints }
+    const [pointsBalance, setPointsBalance] = useState(0)
+    const [redeemInput, setRedeemInput] = useState('')
+    const [appliedPoints, setAppliedPoints] = useState(0)
+
+    useEffect(() => {
+        if (!token) return
+        let cancelled = false
+        const loadRedemption = async () => {
+            try {
+                const metaRes = await axios.get(backendUrl + '/api/bonus/meta')
+                if (cancelled || !metaRes.data?.success || !metaRes.data.redemption?.active) return
+                const balanceRes = await axios.post(backendUrl + '/api/bonus/balance', {}, { headers: { token } })
+                if (cancelled) return
+                setRedemption(metaRes.data.redemption)
+                if (balanceRes.data.success) setPointsBalance(balanceRes.data.confirmed)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        loadRedemption()
+        return () => { cancelled = true }
+    }, [token])
+
+    const orderTotal = getCartAmount() === 0 ? 0 : getCartAmount() + delivery_fee
+    const maxRedeemable = redemption
+        ? Math.min(pointsBalance, Math.floor(orderTotal * (redemption.maxRedemptionPercent / 100) * redemption.redeemRatePerCurrencyUnit))
+        : 0
+    const discountAmount = redemption && appliedPoints > 0
+        ? Math.round((appliedPoints / redemption.redeemRatePerCurrencyUnit) * 100) / 100
+        : 0
+
+    const applyPoints = () => {
+        const requested = Math.floor(Number(redeemInput) || 0)
+        const clamped = Math.max(0, Math.min(requested, maxRedeemable))
+        if (clamped < redemption.minRedeemPoints) {
+            toast.error(t('bonusPoints.minNote', { min: redemption.minRedeemPoints }))
+            return
+        }
+        setAppliedPoints(clamped)
+    }
+
+    const removePoints = () => {
+        setAppliedPoints(0)
+        setRedeemInput('')
+    }
+
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -95,6 +147,11 @@ const PlaceOrder = () => {
                 // is unknowable — that email is sent from an admin click days
                 // later. Assembled once, so this covers COD, Stripe and Twint.
                 locale: i18n.language,
+                // Intent only — how many points the customer would like to
+                // apply. The server always recomputes and enforces the real
+                // discount from the customer's actual balance; this number is
+                // never trusted as-is.
+                redeemPoints: appliedPoints,
             }
 
             switch (method) {
@@ -175,8 +232,44 @@ const PlaceOrder = () => {
             <div className='mt-8'>
 
                 <div className='mt-8 min-w-80'>
-                    <CartTotal />
+                    <CartTotal discountAmount={discountAmount} />
                 </div>
+
+                {redemption && pointsBalance > 0 && (
+                    <div className='mt-6 min-w-80 border border-line rounded p-4'>
+                        <p className='text-sm font-medium mb-1'>{t('bonusPoints.heading')}</p>
+                        <p className='text-xs text-stone mb-3'>{t('bonusPoints.available', { count: pointsBalance })}</p>
+
+                        {appliedPoints > 0 ? (
+                            <div className='flex items-center justify-between gap-3 text-sm'>
+                                <span>{t('bonusPoints.applied', { points: appliedPoints, amount: `${currency} ${discountAmount.toFixed(2)}` })}</span>
+                                <button type='button' onClick={removePoints} className='text-xs underline text-stone bg-transparent border-0 cursor-pointer whitespace-nowrap'>
+                                    {t('bonusPoints.remove')}
+                                </button>
+                            </div>
+                        ) : (
+                            <div className='flex gap-2'>
+                                <input
+                                    type='number'
+                                    min={0}
+                                    max={maxRedeemable}
+                                    value={redeemInput}
+                                    onChange={(e) => setRedeemInput(e.target.value)}
+                                    placeholder={t('bonusPoints.applyLabel')}
+                                    className='border border-line rounded px-3 py-1.5 text-sm w-full'
+                                />
+                                <button type='button' onClick={applyPoints} className='bg-ink text-paper px-4 py-1.5 text-sm whitespace-nowrap'>
+                                    {t('bonusPoints.apply')}
+                                </button>
+                            </div>
+                        )}
+
+                        <p className='text-xs text-stone mt-2'>
+                            {t('bonusPoints.maxNote', { percent: redemption.maxRedemptionPercent })}{' '}
+                            {t('bonusPoints.minNote', { min: redemption.minRedeemPoints })}
+                        </p>
+                    </div>
+                )}
 
                 <div className='mt-12'>
                     <Title text1={t('paymentMethod.text1')} text2={t('paymentMethod.text2')} />

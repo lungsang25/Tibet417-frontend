@@ -18,12 +18,14 @@
     "myProfile": "Il mio profilo",
     "orders": "Ordini",
     "wishlist": "Lista dei desideri",
+    "rewards": "Premi",
     "logout": "Esci"
   },
   "mobileMenu": {
     "myProfile": "IL MIO PROFILO",
     "orders": "ORDINI",
     "wishlist": "LISTA DEI DESIDERI",
+    "rewards": "PREMI",
     "logout": "ESCI"
   },
   "actions": {

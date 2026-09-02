@@ -1,0 +1,38 @@
+{
+  "heading": { "text1": "MY", "text2": "REWARDS" },
+  "loading": "Loading your rewards…",
+  "loadFailed": "Couldn't load your rewards — please try again.",
+  "notActive": "The bonus program isn't active yet — check back soon.",
+  "balance": {
+    "confirmed": "Available points",
+    "pending": "Pending points",
+    "pointsUnit": "points",
+    "pendingNote": "Credited once the related order is delivered."
+  },
+  "referral": {
+    "heading": "Refer a friend",
+    "description": "Share your link. When a friend you refer places their first qualifying order, you both earn bonus points.",
+    "copy": "Copy link",
+    "copied": "Copied",
+    "copyFailed": "Couldn't copy — please select the link manually.",
+    "stats": "{{referred}} friends referred · {{converted}} have earned you points"
+  },
+  "history": {
+    "heading": "Points history",
+    "empty": "No points activity yet.",
+    "types": {
+      "welcome": "Welcome bonus",
+      "purchase": "Purchase points",
+      "referral_referrer": "Referral bonus (you referred a friend)",
+      "referral_referee": "Referral bonus (welcomed via a friend)",
+      "redemption": "Points redeemed",
+      "clawback": "Adjustment (order cancelled/refunded)",
+      "admin_adjustment": "Manual adjustment"
+    },
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "voided": "Voided"
+    }
+  }
+}

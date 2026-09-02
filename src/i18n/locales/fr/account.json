@@ -66,7 +66,9 @@
     "emailLabel": "E-mail :",
     "accountTypeLabel": "Type de compte :",
     "googleAccount": "Compte Google",
-    "emailPassword": "E-mail & mot de passe"
+    "emailPassword": "E-mail & mot de passe",
+    "rewardsBalance": "{{count}} points disponibles",
+    "rewardsCta": "Voir mes récompenses"
   },
   "verify": {
     "twintVerifying": "Vérification de votre paiement Twint...",

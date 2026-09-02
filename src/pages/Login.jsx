@@ -21,11 +21,13 @@ const Login = () => {
       event.preventDefault();
       try {
         if (currentState === 'Sign Up') {
-          
-          const response = await axios.post(backendUrl + '/api/user/register',{name,email,password})
+
+          const referralCode = localStorage.getItem('referralCode') || undefined
+          const response = await axios.post(backendUrl + '/api/user/register',{name,email,password,referralCode})
           if (response.data.success) {
             setToken(response.data.token)
             localStorage.setItem('token',response.data.token)
+            localStorage.removeItem('referralCode')
           } else {
             toast.error(response.data.message)
           }
@@ -51,12 +53,15 @@ const Login = () => {
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
+      const referralCode = localStorage.getItem('referralCode') || undefined
       const response = await axios.post(backendUrl + '/api/user/google', {
-        credential: credentialResponse.credential
+        credential: credentialResponse.credential,
+        referralCode,
       });
       if (response.data.success) {
         setToken(response.data.token);
         localStorage.setItem('token', response.data.token);
+        localStorage.removeItem('referralCode');
       } else {
         toast.error(response.data.message);
       }

@@ -1,0 +1,38 @@
+{
+  "heading": { "text1": "MES", "text2": "RÉCOMPENSES" },
+  "loading": "Chargement de vos récompenses…",
+  "loadFailed": "Impossible de charger vos récompenses — veuillez réessayer.",
+  "notActive": "Le programme de bonus n'est pas encore actif — revenez bientôt.",
+  "balance": {
+    "confirmed": "Points disponibles",
+    "pending": "Points en attente",
+    "pointsUnit": "points",
+    "pendingNote": "Crédités une fois la commande associée livrée."
+  },
+  "referral": {
+    "heading": "Parrainez un ami",
+    "description": "Partagez votre lien. Lorsqu'un ami que vous parrainez passe sa première commande éligible, vous gagnez tous les deux des points bonus.",
+    "copy": "Copier le lien",
+    "copied": "Copié",
+    "copyFailed": "Copie impossible — veuillez sélectionner le lien manuellement.",
+    "stats": "{{referred}} amis parrainés · {{converted}} vous ont rapporté des points"
+  },
+  "history": {
+    "heading": "Historique des points",
+    "empty": "Aucune activité de points pour le moment.",
+    "types": {
+      "welcome": "Bonus de bienvenue",
+      "purchase": "Points d'achat",
+      "referral_referrer": "Bonus de parrainage (vous avez parrainé)",
+      "referral_referee": "Bonus de parrainage (accueilli par un ami)",
+      "redemption": "Points échangés",
+      "clawback": "Ajustement (commande annulée/remboursée)",
+      "admin_adjustment": "Ajustement manuel"
+    },
+    "status": {
+      "pending": "En attente",
+      "confirmed": "Confirmé",
+      "voided": "Annulé"
+    }
+  }
+}

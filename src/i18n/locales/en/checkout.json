@@ -27,5 +27,15 @@
     "paymentUrlUnavailable": "Payment URL not available",
     "twintSuccess": "Twint payment successful!",
     "paymentVerificationFailed": "Payment verification failed"
+  },
+  "bonusPoints": {
+    "heading": "Bonus points",
+    "available": "{{count}} points available",
+    "applyLabel": "Points to apply",
+    "apply": "Apply",
+    "applied": "{{points}} points applied (−{{amount}})",
+    "remove": "Remove",
+    "maxNote": "Up to {{percent}}% of your order can be paid with points.",
+    "minNote": "Minimum {{min}} points to redeem."
   }
 }

@@ -18,12 +18,14 @@
     "myProfile": "Mein Profil",
     "orders": "Bestellungen",
     "wishlist": "Wunschliste",
+    "rewards": "Prämien",
     "logout": "Abmelden"
   },
   "mobileMenu": {
     "myProfile": "MEIN PROFIL",
     "orders": "BESTELLUNGEN",
     "wishlist": "WUNSCHLISTE",
+    "rewards": "PRÄMIEN",
     "logout": "ABMELDEN"
   },
   "actions": {

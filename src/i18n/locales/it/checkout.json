@@ -27,5 +27,15 @@
     "paymentUrlUnavailable": "URL di pagamento non disponibile",
     "twintSuccess": "Pagamento Twint riuscito!",
     "paymentVerificationFailed": "Verifica del pagamento non riuscita"
+  },
+  "bonusPoints": {
+    "heading": "Punti bonus",
+    "available": "{{count}} punti disponibili",
+    "applyLabel": "Punti da utilizzare",
+    "apply": "Applica",
+    "applied": "{{points}} punti applicati (−{{amount}})",
+    "remove": "Rimuovi",
+    "maxNote": "Fino al {{percent}}% del suo ordine può essere pagato con i punti.",
+    "minNote": "Minimo {{min}} punti per il riscatto."
   }
 }

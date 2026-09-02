@@ -138,6 +138,7 @@ const Navbar = () => {
                         <button type='button' role='menuitem' onClick={()=>{navigate('/profile'); setShowProfileMenu(false)}} className='text-left cursor-pointer bg-transparent border-0 p-0 hover:text-ink'>{t('common:profileMenu.myProfile')}</button>
                         <button type='button' role='menuitem' onClick={()=>{navigate('/orders'); setShowProfileMenu(false)}} className='text-left cursor-pointer bg-transparent border-0 p-0 hover:text-ink'>{t('common:profileMenu.orders')}</button>
                         <button type='button' role='menuitem' onClick={()=>{navigate('/wishlist'); setShowProfileMenu(false)}} className='text-left cursor-pointer bg-transparent border-0 p-0 hover:text-ink'>{t('common:profileMenu.wishlist')}</button>
+                        <button type='button' role='menuitem' onClick={()=>{navigate('/rewards'); setShowProfileMenu(false)}} className='text-left cursor-pointer bg-transparent border-0 p-0 hover:text-ink'>{t('common:profileMenu.rewards')}</button>
                         <button type='button' role='menuitem' onClick={()=>{logout(); setShowProfileMenu(false)}} className='text-left cursor-pointer bg-transparent border-0 p-0 hover:text-ink'>{t('common:profileMenu.logout')}</button>
                     </div>
                 </div>}
@@ -181,6 +182,7 @@ const Navbar = () => {
                             <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/profile'>{t('common:mobileMenu.myProfile')}</NavLink>
                             <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/orders'>{t('common:mobileMenu.orders')}</NavLink>
                             <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/wishlist'>{t('common:mobileMenu.wishlist')}</NavLink>
+                            <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/rewards'>{t('common:mobileMenu.rewards')}</NavLink>
                             <button type='button' onClick={()=>{logout(); setVisible(false)}} className='py-2 pl-6 border cursor-pointer bg-transparent text-left w-full'>{t('common:mobileMenu.logout')}</button>
                         </>
                     ) : (

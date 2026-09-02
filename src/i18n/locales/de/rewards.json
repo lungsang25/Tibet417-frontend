@@ -1,0 +1,38 @@
+{
+  "heading": { "text1": "MEINE", "text2": "PRÄMIEN" },
+  "loading": "Ihre Prämien werden geladen…",
+  "loadFailed": "Ihre Prämien konnten nicht geladen werden — bitte versuchen Sie es erneut.",
+  "notActive": "Das Bonusprogramm ist noch nicht aktiv — schauen Sie bald wieder vorbei.",
+  "balance": {
+    "confirmed": "Verfügbare Punkte",
+    "pending": "Ausstehende Punkte",
+    "pointsUnit": "Punkte",
+    "pendingNote": "Werden gutgeschrieben, sobald die zugehörige Bestellung zugestellt wurde."
+  },
+  "referral": {
+    "heading": "Freunde werben",
+    "description": "Teilen Sie Ihren Link. Sobald ein von Ihnen geworbener Freund seine erste qualifizierende Bestellung aufgibt, erhalten Sie beide Bonuspunkte.",
+    "copy": "Link kopieren",
+    "copied": "Kopiert",
+    "copyFailed": "Kopieren nicht möglich — bitte markieren Sie den Link von Hand.",
+    "stats": "{{referred}} geworbene Freunde · {{converted}} davon haben Ihnen Punkte eingebracht"
+  },
+  "history": {
+    "heading": "Punkteverlauf",
+    "empty": "Noch keine Punkteaktivität.",
+    "types": {
+      "welcome": "Willkommensbonus",
+      "purchase": "Punkte aus Einkauf",
+      "referral_referrer": "Empfehlungsbonus (Sie haben geworben)",
+      "referral_referee": "Empfehlungsbonus (durch Freund geworben)",
+      "redemption": "Punkte eingelöst",
+      "clawback": "Korrektur (Bestellung storniert/erstattet)",
+      "admin_adjustment": "Manuelle Anpassung"
+    },
+    "status": {
+      "pending": "Ausstehend",
+      "confirmed": "Bestätigt",
+      "voided": "Storniert"
+    }
+  }
+}

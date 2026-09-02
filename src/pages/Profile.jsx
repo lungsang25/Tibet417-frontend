@@ -9,6 +9,10 @@ const Profile = () => {
   const { token, backendUrl, navigate } = useContext(ShopContext)
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+  // Independent of the profile fetch above — a rewards outage must not block
+  // the rest of the profile page from rendering.
+  const [pointsBalance, setPointsBalance] = useState(null)
+  const [rewardsActive, setRewardsActive] = useState(false)
 
   const fetchProfile = async () => {
     try {
@@ -30,12 +34,29 @@ const Profile = () => {
     }
   }
 
+  const fetchRewardsSummary = async () => {
+    try {
+      const metaRes = await axios.get(backendUrl + '/api/bonus/meta')
+      const active = Boolean(metaRes.data?.success && (
+        metaRes.data.welcome?.active || metaRes.data.referral?.active || metaRes.data.purchase?.active
+      ))
+      setRewardsActive(active)
+      if (!active) return
+
+      const balanceRes = await axios.post(backendUrl + '/api/bonus/balance', {}, { headers: { token } })
+      if (balanceRes.data.success) setPointsBalance(balanceRes.data.confirmed)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     if (!token) {
       navigate('/login')
       return
     }
     fetchProfile()
+    fetchRewardsSummary()
   }, [token])
 
   if (loading) {
@@ -97,6 +118,17 @@ const Profile = () => {
                 )}
               </span>
             </div>
+
+            {rewardsActive && pointsBalance !== null && (
+              <button
+                type='button'
+                onClick={() => navigate('/rewards')}
+                className='w-full flex items-center justify-between gap-3 p-3 bg-gray-50 rounded hover:bg-gray-100 text-left cursor-pointer border-0'
+              >
+                <span className='text-gray-800 font-medium'>{t('profile.rewardsBalance', { count: pointsBalance })}</span>
+                <span className='text-gray-500 text-sm underline'>{t('profile.rewardsCta')}</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

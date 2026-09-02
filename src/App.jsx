@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import SEO from './components/SEO'
@@ -30,6 +30,7 @@ const PlaceOrder = lazy(() => import('./pages/PlaceOrder'))
 const Orders = lazy(() => import('./pages/Orders'))
 const OrderDetail = lazy(() => import('./pages/OrderDetail'))
 const Profile = lazy(() => import('./pages/Profile'))
+const Rewards = lazy(() => import('./pages/Rewards'))
 const Wishlist = lazy(() => import('./pages/Wishlist'))
 const Verify = lazy(() => import('./pages/Verify'))
 const VerifyTwint = lazy(() => import('./pages/VerifyTwint'))
@@ -49,14 +50,32 @@ const PRIVATE_ROUTE_TITLES = {
   '/place-order': (t) => `${t('checkout:deliveryInfo.text1')} ${t('checkout:deliveryInfo.text2')}`,
   '/orders': (t) => `${t('account:orders.heading.text1')} ${t('account:orders.heading.text2')}`,
   '/profile': (t) => t('common:profileMenu.myProfile'),
+  '/rewards': (t) => t('common:profileMenu.rewards'),
   '/wishlist': (t) => t('wishlist:title'),
   '/verify': (t) => t('account:verify.twintVerifying'),
   '/verify-twint': (t) => t('account:verify.twintVerifying'),
 }
 
 const App = () => {
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
   const { t } = useTranslation()
+
+  // Referral capture: a `?ref=CODE` link is only readable at the moment it
+  // lands — kept in localStorage (not lifted into ShopContext, which many
+  // components already depend on) until Login.jsx sends it along with
+  // registration. Never overwrites a code captured on an earlier visit, so a
+  // later plain link (e.g. the homepage from a bookmark) can't clobber it.
+  useEffect(() => {
+    try {
+      const ref = new URLSearchParams(search).get('ref')
+      if (ref && !localStorage.getItem('referralCode')) {
+        localStorage.setItem('referralCode', ref.trim().toUpperCase())
+      }
+    } catch (error) {
+      // localStorage can throw in a private/storage-blocked context — capturing
+      // a referral code is a nice-to-have, never worth breaking the app over.
+    }
+  }, [search])
   // Strip the leading /:lang segment ('/de/cart' -> '/cart') before matching.
   const pathWithoutLang = '/' + pathname.split('/').slice(2).join('/')
   // Exact-key lookup first, then the dynamic children of a private route:
@@ -107,6 +126,7 @@ const App = () => {
               <Route path='orders' element={<Orders />} />
               <Route path='orders/:orderId' element={<OrderDetail />} />
               <Route path='profile' element={<Profile />} />
+              <Route path='rewards' element={<Rewards />} />
               <Route path='wishlist' element={<Wishlist />} />
               <Route path='verify' element={<Verify />} />
               <Route path='verify-twint' element={<VerifyTwint />} />
