@@ -290,7 +290,7 @@ const Collection = () => {
             !productsLoaded
               ? Array.from({ length: SKELETON_COUNT }).map((_, index) => <ProductCardSkeleton key={index} />)
               : filterProducts.map((item)=>(
-                  <ProductItem key={item._id} name={item.name} id={item._id} price={item.price} image={item.image} badge={getProductBadge(item, t)} />
+                  <ProductItem key={item._id} name={item.name} id={item._id} price={item.price} image={item.image} sizes={item.sizes} badge={getProductBadge(item, t)} />
                 ))
           }
         </div>

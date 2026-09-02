@@ -37,6 +37,7 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [products, setProducts] = useState(() => preloadedProducts() ?? []);
     const [productsLoaded, setProductsLoaded] = useState(() => preloadedProducts() !== null);
+    const [wishlist, setWishlist] = useState([]);
     const [token, setToken] = useState('')
     const [authChecked, setAuthChecked] = useState(false)
     const navigate = useLocalizedNavigate();
@@ -196,6 +197,65 @@ const ShopContextProvider = (props) => {
         }
     }
 
+    const fetchWishlist = async (token) => {
+        try {
+            const response = await axios.post(backendUrl + '/api/wishlist/get', {}, { headers: { token } });
+            if (response.data.success) {
+                setWishlist(response.data.wishlist.map(item => item._id));
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const addToWishlist = async (productId) => {
+        if (!token) {
+            toast.error('Please login to add to wishlist');
+            navigate('/login');
+            return;
+        }
+
+        try {
+            setWishlist(prev => [...prev, productId]);
+            const response = await axios.post(backendUrl + '/api/wishlist/add', { productId }, { headers: { token } });
+            if (response.data.success) {
+                toast.success('Added to wishlist');
+            } else {
+                setWishlist(prev => prev.filter(id => id !== productId));
+                toast.error(response.data.message);
+            }
+        } catch (error) {
+            setWishlist(prev => prev.filter(id => id !== productId));
+            console.log(error);
+            toast.error(error.message);
+        }
+    };
+
+    const removeFromWishlist = async (productId) => {
+        try {
+            setWishlist(prev => prev.filter(id => id !== productId));
+            const response = await axios.post(backendUrl + '/api/wishlist/remove', { productId }, { headers: { token } });
+            if (response.data.success) {
+                toast.success('Removed from wishlist');
+            } else {
+                setWishlist(prev => [...prev, productId]);
+                toast.error(response.data.message);
+            }
+        } catch (error) {
+            setWishlist(prev => [...prev, productId]);
+            console.log(error);
+            toast.error(error.message);
+        }
+    };
+
+    const isInWishlist = (productId) => {
+        return wishlist.includes(productId);
+    };
+
+    const getWishlistCount = () => {
+        return wishlist.length;
+    };
+
     useEffect(() => {
         getProductsData()
     }, [])
@@ -204,9 +264,11 @@ const ShopContextProvider = (props) => {
         if (!token && localStorage.getItem('token')) {
             setToken(localStorage.getItem('token'))
             getUserCart(localStorage.getItem('token'))
+            fetchWishlist(localStorage.getItem('token'))
         }
         if (token) {
             getUserCart(token)
+            fetchWishlist(token)
         }
         // `token` starts as '' and is only filled in here, one tick after the
         // first render. Without this flag an auth-guarded page cannot tell
@@ -222,7 +284,8 @@ const ShopContextProvider = (props) => {
         cartItems, addToCart,setCartItems,
         getCartCount, updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken, token, authChecked
+        setToken, token, authChecked,
+        wishlist, addToWishlist, removeFromWishlist, isInWishlist, getWishlistCount
     }
 
     return (

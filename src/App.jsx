@@ -30,6 +30,7 @@ const PlaceOrder = lazy(() => import('./pages/PlaceOrder'))
 const Orders = lazy(() => import('./pages/Orders'))
 const OrderDetail = lazy(() => import('./pages/OrderDetail'))
 const Profile = lazy(() => import('./pages/Profile'))
+const Wishlist = lazy(() => import('./pages/Wishlist'))
 const Verify = lazy(() => import('./pages/Verify'))
 const VerifyTwint = lazy(() => import('./pages/VerifyTwint'))
 
@@ -48,6 +49,7 @@ const PRIVATE_ROUTE_TITLES = {
   '/place-order': (t) => `${t('checkout:deliveryInfo.text1')} ${t('checkout:deliveryInfo.text2')}`,
   '/orders': (t) => `${t('account:orders.heading.text1')} ${t('account:orders.heading.text2')}`,
   '/profile': (t) => t('common:profileMenu.myProfile'),
+  '/wishlist': (t) => t('wishlist:title'),
   '/verify': (t) => t('account:verify.twintVerifying'),
   '/verify-twint': (t) => t('account:verify.twintVerifying'),
 }
@@ -105,6 +107,7 @@ const App = () => {
               <Route path='orders' element={<Orders />} />
               <Route path='orders/:orderId' element={<OrderDetail />} />
               <Route path='profile' element={<Profile />} />
+              <Route path='wishlist' element={<Wishlist />} />
               <Route path='verify' element={<Verify />} />
               <Route path='verify-twint' element={<VerifyTwint />} />
             </Route>

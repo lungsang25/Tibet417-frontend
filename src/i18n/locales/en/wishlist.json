@@ -1,0 +1,13 @@
+{
+  "title": "My Wishlist",
+  "count": "{{count}} items saved",
+  "empty": {
+    "title": "Your wishlist is empty",
+    "description": "Save items you love for later",
+    "cta": "Browse Collection"
+  },
+  "seo": {
+    "title": "My Wishlist",
+    "description": "View and manage your saved items"
+  }
+}

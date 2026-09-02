@@ -1,0 +1,13 @@
+{
+  "title": "Ma liste de souhaits",
+  "count": "{{count}} articles enregistrés",
+  "empty": {
+    "title": "Votre liste de souhaits est vide",
+    "description": "Enregistrez les articles que vous aimez pour plus tard",
+    "cta": "Parcourir la collection"
+  },
+  "seo": {
+    "title": "Ma liste de souhaits",
+    "description": "Voir et gérer vos articles enregistrés"
+  }
+}

@@ -17,17 +17,23 @@
   "profileMenu": {
     "myProfile": "Mein Profil",
     "orders": "Bestellungen",
+    "wishlist": "Wunschliste",
     "logout": "Abmelden"
   },
   "mobileMenu": {
     "myProfile": "MEIN PROFIL",
     "orders": "BESTELLUNGEN",
+    "wishlist": "WUNSCHLISTE",
     "logout": "ABMELDEN"
   },
   "actions": {
     "addToCart": "IN DEN WARENKORB",
+    "quickAdd": "SCHNELL HINZUFÜGEN",
+    "adding": "WIRD HINZUGEFÜGT...",
     "viewAll": "Alle anzeigen",
-    "addedToCart": "Zum Warenkorb hinzugefügt"
+    "addedToCart": "Zum Warenkorb hinzugefügt",
+    "addToWishlist": "Zur Wunschliste hinzufügen",
+    "removeFromWishlist": "Von Wunschliste entfernen"
   },
   "search": {
     "placeholder": "Suche",

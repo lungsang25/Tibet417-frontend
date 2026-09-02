@@ -1,0 +1,13 @@
+{
+  "title": "Meine Wunschliste",
+  "count": "{{count}} Artikel gespeichert",
+  "empty": {
+    "title": "Ihre Wunschliste ist leer",
+    "description": "Speichern Sie Artikel, die Sie mögen, für später",
+    "cta": "Kollektion durchsuchen"
+  },
+  "seo": {
+    "title": "Meine Wunschliste",
+    "description": "Ihre gespeicherten Artikel anzeigen und verwalten"
+  }
+}

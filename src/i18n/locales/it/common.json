@@ -17,17 +17,23 @@
   "profileMenu": {
     "myProfile": "Il mio profilo",
     "orders": "Ordini",
+    "wishlist": "Lista dei desideri",
     "logout": "Esci"
   },
   "mobileMenu": {
     "myProfile": "IL MIO PROFILO",
     "orders": "ORDINI",
+    "wishlist": "LISTA DEI DESIDERI",
     "logout": "ESCI"
   },
   "actions": {
     "addToCart": "AGGIUNGI AL CARRELLO",
+    "quickAdd": "AGGIUNTA RAPIDA",
+    "adding": "AGGIUNTA IN CORSO...",
     "viewAll": "Vedi tutto",
-    "addedToCart": "Aggiunto al carrello"
+    "addedToCart": "Aggiunto al carrello",
+    "addToWishlist": "Aggiungi alla lista dei desideri",
+    "removeFromWishlist": "Rimuovi dalla lista dei desideri"
   },
   "search": {
     "placeholder": "Cerca",

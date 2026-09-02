@@ -17,17 +17,23 @@
   "profileMenu": {
     "myProfile": "My Profile",
     "orders": "Orders",
+    "wishlist": "Wishlist",
     "logout": "Logout"
   },
   "mobileMenu": {
     "myProfile": "MY PROFILE",
     "orders": "ORDERS",
+    "wishlist": "WISHLIST",
     "logout": "LOGOUT"
   },
   "actions": {
     "addToCart": "ADD TO CART",
+    "quickAdd": "QUICK ADD",
+    "adding": "ADDING...",
     "viewAll": "View all",
-    "addedToCart": "Added to cart"
+    "addedToCart": "Added to cart",
+    "addToWishlist": "Add to wishlist",
+    "removeFromWishlist": "Remove from wishlist"
   },
   "search": {
     "placeholder": "Search",

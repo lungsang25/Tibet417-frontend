@@ -1,0 +1,13 @@
+{
+  "title": "La mia lista dei desideri",
+  "count": "{{count}} articoli salvati",
+  "empty": {
+    "title": "La tua lista dei desideri è vuota",
+    "description": "Salva gli articoli che ami per dopo",
+    "cta": "Sfoglia la collezione"
+  },
+  "seo": {
+    "title": "La mia lista dei desideri",
+    "description": "Visualizza e gestisci i tuoi articoli salvati"
+  }
+}

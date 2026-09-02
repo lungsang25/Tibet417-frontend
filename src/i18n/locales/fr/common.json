@@ -17,17 +17,23 @@
   "profileMenu": {
     "myProfile": "Mon profil",
     "orders": "Commandes",
+    "wishlist": "Liste de souhaits",
     "logout": "Déconnexion"
   },
   "mobileMenu": {
     "myProfile": "MON PROFIL",
     "orders": "COMMANDES",
+    "wishlist": "LISTE DE SOUHAITS",
     "logout": "DÉCONNEXION"
   },
   "actions": {
     "addToCart": "AJOUTER AU PANIER",
+    "quickAdd": "AJOUT RAPIDE",
+    "adding": "AJOUT EN COURS...",
     "viewAll": "Tout voir",
-    "addedToCart": "Ajouté au panier"
+    "addedToCart": "Ajouté au panier",
+    "addToWishlist": "Ajouter à la liste de souhaits",
+    "removeFromWishlist": "Retirer de la liste de souhaits"
   },
   "search": {
     "placeholder": "Rechercher",

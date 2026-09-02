@@ -63,6 +63,7 @@ const ProductSection = ({
                 image={item.image}
                 name={item.name}
                 price={item.price}
+                sizes={item.sizes}
                 priority={index < 4}
                 badge={getProductBadge(item, t)}
               />
