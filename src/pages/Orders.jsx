@@ -8,10 +8,11 @@ import { getThumbnail } from '../utils/imageUtils';
 import PageLoader from '../components/PageLoader';
 import OrderStatusTimeline from '../components/OrderStatusTimeline';
 import { LocalizedLink as Link } from '../hooks/useLocalizedNavigation';
+import { formatDate } from '../utils/formatDate';
 
 const Orders = () => {
 
-  const { t } = useTranslation('account')
+  const { t, i18n } = useTranslation('account')
   const { backendUrl, token , currency} = useContext(ShopContext);
 
   const [orders, setOrders] = useState([])
@@ -67,7 +68,7 @@ const Orders = () => {
                 <div key={order._id} className='border p-4 sm:p-6 flex flex-col gap-4'>
                   <div className='flex flex-wrap items-center justify-between gap-x-6 gap-y-1 text-sm text-stone border-b pb-3'>
                     <span>{t('orders.orderNumber', { id: order._id.slice(-8).toUpperCase() })}</span>
-                    <span>{new Date(order.date).toDateString()}</span>
+                    <span>{formatDate(order.date, i18n.language)}</span>
                     <span>{t('orders.payment')} {order.paymentMethod}</span>
                     <span className='font-medium text-ink'>{t('orders.total')} {currency}{order.amount}</span>
                   </div>
@@ -89,8 +90,18 @@ const Orders = () => {
                   </div>
 
                   <div className='flex flex-wrap items-center justify-between gap-4 border-t pt-4'>
-                    <OrderStatusTimeline status={order.status} />
-                    <button onClick={loadOrderData} className='border px-4 py-2 text-sm font-medium rounded-sm shrink-0'>{t('orders.trackOrder')}</button>
+                    <div className='flex flex-col gap-2'>
+                      <OrderStatusTimeline status={order.status} />
+                      {order.tracking?.number && (
+                        <p className='text-xs text-stone'>
+                          {order.tracking.carrierName} · <span className='font-mono'>{order.tracking.number}</span>
+                        </p>
+                      )}
+                    </div>
+                    {/* Was onClick={loadOrderData} — a "Track Order" button that
+                        only refetched the same list. It now goes to the order's
+                        own page, which is also where the shipping email lands. */}
+                    <Link to={`/orders/${order._id}`} className='border px-4 py-2 text-sm font-medium rounded-sm shrink-0'>{t('orders.trackOrder')}</Link>
                   </div>
                 </div>
               ))

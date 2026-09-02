@@ -62,6 +62,11 @@
       "permanent": true
     },
     {
+      "source": "/orders/:orderId",
+      "destination": "/en/orders/:orderId",
+      "permanent": true
+    },
+    {
       "source": "/profile",
       "destination": "/en/profile",
       "permanent": true
@@ -94,6 +99,10 @@
     },
     {
       "source": "/(en|de|fr|it)/(cart|login|place-order|orders|profile|verify|verify-twint)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
+    {
+      "source": "/(en|de|fr|it)/orders/:orderId",
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
     },
     {

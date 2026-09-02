@@ -29,7 +29,36 @@
       "cta": "Inizia lo shopping"
     },
     "orderNumber": "Ordine n. {{id}}",
-    "total": "Totale:"
+    "total": "Totale:",
+    "tracking": {
+      "heading": "Spedizione e tracciamento",
+      "carrier": "Corriere",
+      "number": "Numero di tracciamento",
+      "trackOn": "Traccia su {{carrier}}",
+      "copy": "Copia",
+      "copied": "Copiato",
+      "copyAria": "Copia il numero di tracciamento",
+      "copyFailed": "Copia non riuscita — selezioni il numero manualmente.",
+      "estimatedDelivery": "Consegna prevista",
+      "noLink": "Questo corriere non offre un tracciamento online — indichi il numero se lo contatta.",
+      "pending": "Non appena il suo pacco sarà in viaggio, il numero di tracciamento apparirà qui.",
+      "unavailable": "Questo ordine è stato spedito, ma non è disponibile alcun numero di tracciamento.",
+      "shippedOn": "Spedito il {{date}}",
+      "deliveredOn": "Consegnato il {{date}}"
+    },
+    "detail": {
+      "heading": {
+        "text1": "DETTAGLI",
+        "text2": "DELL'ORDINE"
+      },
+      "back": "Torna ai miei ordini",
+      "loading": "Caricamento del suo ordine…",
+      "notFound": "Non abbiamo trovato questo ordine.",
+      "notFoundCta": "Torna ai miei ordini",
+      "itemsHeading": "Articoli",
+      "timelineHeading": "Avanzamento",
+      "shippingAddress": "Indirizzo di spedizione"
+    }
   },
   "profile": {
     "loading": "Caricamento...",

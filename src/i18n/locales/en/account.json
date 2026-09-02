@@ -29,7 +29,36 @@
       "cta": "Start shopping"
     },
     "orderNumber": "Order #{{id}}",
-    "total": "Total:"
+    "total": "Total:",
+    "tracking": {
+      "heading": "Shipping & tracking",
+      "carrier": "Carrier",
+      "number": "Tracking number",
+      "trackOn": "Track on {{carrier}}",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyAria": "Copy tracking number",
+      "copyFailed": "Couldn't copy — please select the number manually.",
+      "estimatedDelivery": "Estimated delivery",
+      "noLink": "This carrier has no online tracking page — quote the number if you contact them.",
+      "pending": "We'll add a tracking number here as soon as your parcel is on its way.",
+      "unavailable": "This order has shipped, but no tracking number is available for it.",
+      "shippedOn": "Shipped on {{date}}",
+      "deliveredOn": "Delivered on {{date}}"
+    },
+    "detail": {
+      "heading": {
+        "text1": "ORDER",
+        "text2": "DETAILS"
+      },
+      "back": "Back to my orders",
+      "loading": "Loading your order…",
+      "notFound": "We couldn't find that order.",
+      "notFoundCta": "Back to my orders",
+      "itemsHeading": "Items",
+      "timelineHeading": "Progress",
+      "shippingAddress": "Shipping address"
+    }
   },
   "profile": {
     "loading": "Loading...",

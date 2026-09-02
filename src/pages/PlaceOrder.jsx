@@ -11,7 +11,7 @@ import { toast } from 'react-toastify'
 
 const PlaceOrder = () => {
 
-    const { t } = useTranslation('checkout')
+    const { t, i18n } = useTranslation('checkout')
     const [method, setMethod] = useState('cod');
     const [acceptedTerms, setAcceptedTerms] = useState(false);
     const [qrModal, setQrModal] = useState(null);
@@ -89,7 +89,12 @@ const PlaceOrder = () => {
             let orderData = {
                 address: formData,
                 items: orderItems,
-                amount: getCartAmount() + delivery_fee
+                amount: getCartAmount() + delivery_fee,
+                // Which language to write the shipping emails in. Captured here
+                // because the customer's browser language when the parcel ships
+                // is unknowable — that email is sent from an admin click days
+                // later. Assembled once, so this covers COD, Stripe and Twint.
+                locale: i18n.language,
             }
 
             switch (method) {

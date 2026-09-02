@@ -4,12 +4,14 @@ import { ShopContext } from '../context/ShopContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { GoogleLogin } from '@react-oauth/google';
+import { useSearchParams } from 'react-router-dom';
 
 const Login = () => {
 
   const { t } = useTranslation('account')
   const [currentState, setCurrentState] = useState('Login');
   const { token, setToken, navigate, backendUrl } = useContext(ShopContext)
+  const [searchParams] = useSearchParams()
 
   const [name,setName] = useState('')
   const [password,setPasword] = useState('')
@@ -69,9 +71,13 @@ const Login = () => {
   };
 
   useEffect(()=>{
-    if (token) {
-      navigate('/')
-    }
+    if (!token) return
+    const target = searchParams.get('redirect')
+    // Same-site absolute paths only. '//evil.com' is a protocol-relative URL
+    // that a bare startsWith('/') check would happily navigate to, which would
+    // make this an open redirect.
+    const safe = target && target.startsWith('/') && !target.startsWith('//') ? target : '/'
+    navigate(safe)
   },[token])
 
   return (

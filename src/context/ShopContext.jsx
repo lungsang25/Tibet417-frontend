@@ -38,6 +38,7 @@ const ShopContextProvider = (props) => {
     const [products, setProducts] = useState(() => preloadedProducts() ?? []);
     const [productsLoaded, setProductsLoaded] = useState(() => preloadedProducts() !== null);
     const [token, setToken] = useState('')
+    const [authChecked, setAuthChecked] = useState(false)
     const navigate = useLocalizedNavigate();
 
 
@@ -207,6 +208,12 @@ const ShopContextProvider = (props) => {
         if (token) {
             getUserCart(token)
         }
+        // `token` starts as '' and is only filled in here, one tick after the
+        // first render. Without this flag an auth-guarded page cannot tell
+        // "logged out" from "not read localStorage yet", so it redirects every
+        // logged-in visitor to /login on first paint — which is exactly what a
+        // customer following the tracking link in a shipping email does.
+        setAuthChecked(true)
     }, [token])
 
     const value = {
@@ -215,7 +222,7 @@ const ShopContextProvider = (props) => {
         cartItems, addToCart,setCartItems,
         getCartCount, updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken, token
+        setToken, token, authChecked
     }
 
     return (

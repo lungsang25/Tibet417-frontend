@@ -29,7 +29,36 @@
       "cta": "Jetzt einkaufen"
     },
     "orderNumber": "Bestellung Nr. {{id}}",
-    "total": "Gesamt:"
+    "total": "Gesamt:",
+    "tracking": {
+      "heading": "Versand & Sendungsverfolgung",
+      "carrier": "Versanddienst",
+      "number": "Sendungsnummer",
+      "trackOn": "Bei {{carrier}} verfolgen",
+      "copy": "Kopieren",
+      "copied": "Kopiert",
+      "copyAria": "Sendungsnummer kopieren",
+      "copyFailed": "Kopieren nicht möglich — bitte markieren Sie die Nummer von Hand.",
+      "estimatedDelivery": "Voraussichtliche Lieferung",
+      "noLink": "Dieser Versanddienst bietet keine Online-Sendungsverfolgung — geben Sie die Nummer bei einer Anfrage an.",
+      "pending": "Sobald Ihr Paket unterwegs ist, finden Sie die Sendungsnummer hier.",
+      "unavailable": "Diese Bestellung wurde versandt, es ist jedoch keine Sendungsnummer verfügbar.",
+      "shippedOn": "Versandt am {{date}}",
+      "deliveredOn": "Zugestellt am {{date}}"
+    },
+    "detail": {
+      "heading": {
+        "text1": "BESTELL-",
+        "text2": "DETAILS"
+      },
+      "back": "Zurück zu meinen Bestellungen",
+      "loading": "Bestellung wird geladen…",
+      "notFound": "Diese Bestellung konnte nicht gefunden werden.",
+      "notFoundCta": "Zurück zu meinen Bestellungen",
+      "itemsHeading": "Artikel",
+      "timelineHeading": "Verlauf",
+      "shippingAddress": "Lieferadresse"
+    }
   },
   "profile": {
     "loading": "Wird geladen...",

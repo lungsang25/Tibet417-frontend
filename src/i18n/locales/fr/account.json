@@ -29,7 +29,36 @@
       "cta": "Commencer mes achats"
     },
     "orderNumber": "Commande n° {{id}}",
-    "total": "Total :"
+    "total": "Total :",
+    "tracking": {
+      "heading": "Expédition et suivi",
+      "carrier": "Transporteur",
+      "number": "Numéro de suivi",
+      "trackOn": "Suivre sur {{carrier}}",
+      "copy": "Copier",
+      "copied": "Copié",
+      "copyAria": "Copier le numéro de suivi",
+      "copyFailed": "Copie impossible — veuillez sélectionner le numéro manuellement.",
+      "estimatedDelivery": "Livraison estimée",
+      "noLink": "Ce transporteur ne propose pas de suivi en ligne — indiquez le numéro si vous le contactez.",
+      "pending": "Dès que votre colis sera en route, le numéro de suivi apparaîtra ici.",
+      "unavailable": "Cette commande a été expédiée, mais aucun numéro de suivi n'est disponible.",
+      "shippedOn": "Expédiée le {{date}}",
+      "deliveredOn": "Livrée le {{date}}"
+    },
+    "detail": {
+      "heading": {
+        "text1": "DÉTAILS DE",
+        "text2": "LA COMMANDE"
+      },
+      "back": "Retour à mes commandes",
+      "loading": "Chargement de votre commande…",
+      "notFound": "Nous n’avons pas trouvé cette commande.",
+      "notFoundCta": "Retour à mes commandes",
+      "itemsHeading": "Articles",
+      "timelineHeading": "Suivi",
+      "shippingAddress": "Adresse de livraison"
+    }
   },
   "profile": {
     "loading": "Chargement...",

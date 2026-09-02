@@ -28,6 +28,7 @@ const Cart = lazy(() => import('./pages/Cart'))
 const Login = lazy(() => import('./pages/Login'))
 const PlaceOrder = lazy(() => import('./pages/PlaceOrder'))
 const Orders = lazy(() => import('./pages/Orders'))
+const OrderDetail = lazy(() => import('./pages/OrderDetail'))
 const Profile = lazy(() => import('./pages/Profile'))
 const Verify = lazy(() => import('./pages/Verify'))
 const VerifyTwint = lazy(() => import('./pages/VerifyTwint'))
@@ -56,7 +57,12 @@ const App = () => {
   const { t } = useTranslation()
   // Strip the leading /:lang segment ('/de/cart' -> '/cart') before matching.
   const pathWithoutLang = '/' + pathname.split('/').slice(2).join('/')
-  const privateTitleFn = PRIVATE_ROUTE_TITLES[pathWithoutLang]
+  // Exact-key lookup first, then the dynamic children of a private route:
+  // '/orders/<id>' matches no key, so without this it would ship without the
+  // noindex the map exists to apply.
+  const privateTitleFn =
+    PRIVATE_ROUTE_TITLES[pathWithoutLang] ||
+    (/^\/orders\/[^/]+$/.test(pathWithoutLang) ? PRIVATE_ROUTE_TITLES['/orders'] : null)
   const privateTitle = privateTitleFn ? privateTitleFn(t) : null
 
   return (
@@ -97,6 +103,7 @@ const App = () => {
               <Route path='login' element={<Login />} />
               <Route path='place-order' element={<PlaceOrder />} />
               <Route path='orders' element={<Orders />} />
+              <Route path='orders/:orderId' element={<OrderDetail />} />
               <Route path='profile' element={<Profile />} />
               <Route path='verify' element={<Verify />} />
               <Route path='verify-twint' element={<VerifyTwint />} />
